@@ -1,3 +1,4 @@
+import 'package:faz_application/MainScreen/MainScreen.dart';
 import 'package:faz_application/Models/Methods.dart';
 import 'package:faz_application/Models/Variables.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
         builder: () => MaterialApp(
             debugShowCheckedModeBanner: false,
             theme: ThemeData(fontFamily: "Cairo"),
-            home: MyHomePage()
+            home: MainScreen()
             //----------------------------------
             ),
       ),
