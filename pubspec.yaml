@@ -31,6 +31,8 @@ dependencies:
     sdk: flutter
   flutter_screenutil: ^5.3.1
   dropdown_below: ^1.0.3
+  lottie: ^1.2.2
+  flutter_image_slider: ^0.0.2
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -64,6 +66,7 @@ flutter:
   assets:
      - assets/images/
      - assets/fonts/
+     - assets/lottie/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
