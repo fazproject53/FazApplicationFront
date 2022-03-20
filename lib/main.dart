@@ -4,6 +4,8 @@ import 'package:faz_application/Models/Variables.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'home/Services/Services.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -15,15 +17,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      
       debugShowCheckedModeBanner: false,
       home: ScreenUtilInit(
-        designSize: const Size(413, 763),
+        designSize: const Size(375, 816),
         minTextAdapt: true,
         splitScreenMode: true,
         builder: () => MaterialApp(
             debugShowCheckedModeBanner: false,
-            theme: ThemeData(fontFamily: "Cairo"),
-            home: MainScreen()
+            theme: ThemeData(
+              fontFamily: "Cairo",
+              backgroundColor: blackBackground,
+            ),
+            home: const Services()
             //----------------------------------
             ),
       ),
@@ -94,8 +100,8 @@ class _MyHomePageState extends State<MyHomePage> {
             SizedBox(
               height: 40.h,
             ),
-            gradientContainer(120.h, 40.w,
-                text(context, 'اطلب الباقة', 12, white), () {}),
+            gradientContainer(
+                120.h, 40.w, text(context, 'اطلب الباقة', 12, white), () {}),
           ],
         ),
       ),
