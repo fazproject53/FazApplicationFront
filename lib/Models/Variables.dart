@@ -9,7 +9,9 @@ const Color white = Color(0xFFFFFFFF);
 const Color yellow = Color(0xFFECBB5C);
 const Color grey = Color(0xFF323435);
 const Color lightBlack = Color(0xFF171616); ///Used in texts fields and container
-const Color lightPurple = Color(0xFF7B7890); ///Used in suTitle in introduction screen
+const Color lightPurple = Color(0xFF7B7890);
+const Color cardColor = Color(0xFF0D0D0D); ///Used in suTitle in introduction screen
+const Color transparent = Colors.transparent;
 
 ///Icons
 IconData addIcon = Icons.add_box;
@@ -30,6 +32,7 @@ IconData titleIcon = Icons.title_outlined;
 IconData descriptionIcon = Icons.description_outlined;
 IconData writeIcon = Icons.border_color_outlined;
 IconData facebookIcon = Icons.facebook;
+IconData backIcon = Icons.arrow_forward_ios_rounded;
 
 
 ///Text Controller
