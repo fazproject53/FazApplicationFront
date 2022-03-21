@@ -13,6 +13,7 @@ import 'package:flutter_image_slider/carousel.dart';
 import 'package:flutter_image_slider/indicator/Circle.dart';
 
 import '../HomeScreen-Main/AboutUs/about_us_main.dart';
+import '../HomeScreen-Main/ContactWithUs/contact_with_us.dart';
 
 class MainScreen extends StatefulWidget {
   @override
@@ -200,7 +201,9 @@ class _MainScreenState extends State<MainScreen> {
                     Lottie.asset('assets/lottie/contactus.json', height: 100.h, width: 100.w),
 
                   ],),),
-                  onTap: (){},
+                  onTap: (){
+                    goToPage(context, ContactWithUsMain());
+                  },
                     ),
               ],),
             SizedBox(height: 50.h,)
