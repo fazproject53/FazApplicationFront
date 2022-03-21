@@ -139,17 +139,24 @@ class _OurWorkState extends State<OurWork> {
         () {
 
          if(i==0){
+
            all(i);
+
          }else if(i==1){
            webDesign(i);
+
          }else if(i==2){
            identityDesign(i);
+
          }else if(i==3){
            mobileDevelopment(i);
+
          }else if(i==4){
            socialMedia(i);
+
          }else{
            searchEngines(i);
+
          }
         },
         width: widgetWidth[i],
