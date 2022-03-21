@@ -87,7 +87,7 @@ class _OurMethodologyHomeState extends State<OurMethodologyHome> {
   Widget cardInfo(int index) {
     return SizedBox(
       width: 300.w,
-      height: 160.h,
+      height: 175.h,
       child: Card(
         color: cardColor,
         child: Padding(
@@ -109,8 +109,11 @@ class _OurMethodologyHomeState extends State<OurMethodologyHome> {
               SizedBox(
                 height: 5.h,
               ),
-              text(context, methodologyTitle[index], 16, yellow, fontWeight: FontWeight.bold),
-
+              text(context, methodologyTitle[index], 16, yellow,
+                  fontWeight: FontWeight.bold),
+              SizedBox(
+                height: 5.h,
+              ),
               Padding(
                 padding: EdgeInsets.only(right: 20.w, left: 50.w),
                 child: Column(
@@ -118,35 +121,48 @@ class _OurMethodologyHomeState extends State<OurMethodologyHome> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        text(context, 'اتفاقية المستخدم', 12, white, family: 'DIN Next LT Arabic'),
-                        text(context, 'اتفاقية المستخدم', 12, white, family: 'DIN Next LT Arabic'),
-                        text(context, 'اتفاقية المستخدم', 12, white, family: 'DIN Next LT Arabic')
+                        text(context, 'اتفاقية المستخدم', 12, white,
+                            family: 'DIN Next LT Arabic'),
+                        text(context, 'اتفاقية المستخدم', 12, white,
+                            family: 'DIN Next LT Arabic'),
+                        text(context, 'اتفاقية المستخدم', 12, white,
+                            family: 'DIN Next LT Arabic')
                       ],
                     ),
+
                     ///---------------------------
                     SizedBox(
                       height: 5.h,
                     ),
+
                     ///---------------------------
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        text(context, 'اتفاقية المستخدم', 12, white, family: 'DIN Next LT Arabic'),
-                        text(context, 'اتفاقية المستخدم', 12, white, family: 'DIN Next LT Arabic'),
-                        text(context, 'اتفاقية المستخدم', 12, white, family: 'DIN Next LT Arabic')
+                        text(context, 'اتفاقية المستخدم', 12, white,
+                            family: 'DIN Next LT Arabic'),
+                        text(context, 'اتفاقية المستخدم', 12, white,
+                            family: 'DIN Next LT Arabic'),
+                        text(context, 'اتفاقية المستخدم', 12, white,
+                            family: 'DIN Next LT Arabic')
                       ],
                     ),
+
                     ///---------------------------
                     SizedBox(
                       height: 5.h,
                     ),
+
                     ///---------------------------
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        text(context, 'اتفاقية المستخدم', 12, white, family: 'DIN Next LT Arabic'),
-                        text(context, 'اتفاقية المستخدم', 12, white, family: 'DIN Next LT Arabic'),
-                        text(context, 'اتفاقية المستخدم', 12, white, family: 'DIN Next LT Arabic')
+                        text(context, 'اتفاقية المستخدم', 12, white,
+                            family: 'DIN Next LT Arabic'),
+                        text(context, 'اتفاقية المستخدم', 12, white,
+                            family: 'DIN Next LT Arabic'),
+                        text(context, 'اتفاقية المستخدم', 12, white,
+                            family: 'DIN Next LT Arabic')
                       ],
                     )
                   ],
