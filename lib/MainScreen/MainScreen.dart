@@ -14,6 +14,7 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
+  bool open = false;
   @override
   Widget build(BuildContext context) {
     return Directionality(
@@ -24,27 +25,37 @@ class _MainScreenState extends State<MainScreen> {
           backgroundColor: yellow,
           switchLabelPosition: true,
           overlayColor: Colors.transparent,
-          animatedIcon: AnimatedIcons.menu_close,
+          icon:  open?closeIcon: addIcon,
+          iconTheme: IconThemeData(color: blackBackground),
+          onOpen: (){setState(() {
+            open = true;
+          });},
+          onClose: (){setState(() {
+            open = false;
+          });},
           children: [
             SpeedDialChild(
                 backgroundColor: yellow,
-                child: Icon(askPackageIcon),
+                child:Icon(askPackageIcon),
                 label: '       طلب باقة        ',
+                labelStyle: TextStyle(fontWeight: FontWeight.bold),
                 labelBackgroundColor: yellow,
                 onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context) => orderPackage()));}
             ),
             SpeedDialChild(
                 backgroundColor: yellow,
                 labelBackgroundColor: yellow,
+                labelStyle: TextStyle(fontWeight: FontWeight.bold),
                 child: Icon(askServiceIcon),
                 label: '       طلب خدمة        ',
                 onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context) => orderService()));}
             ),
             SpeedDialChild(
               labelBackgroundColor: yellow,
-                backgroundColor: yellow,
-                child: Icon(chatIcon),
-                label: 'المحادثة المباشرة',
+              backgroundColor: yellow,
+              labelStyle: TextStyle(fontWeight: FontWeight.bold),
+              child: Icon(chatIcon),
+              label: 'المحادثة المباشرة',
             ),
           ],
         ),
