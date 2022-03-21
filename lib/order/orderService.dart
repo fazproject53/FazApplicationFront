@@ -65,51 +65,53 @@ class _orderServiceState extends State<orderService> {
             SizedBox(height: 20.h,),
             textFieldIcon(context, 'ادخل رقم جوالك', 14, false, phoneNumberIcon, myController, (value){}, false),
             SizedBox(height: 20.h,),
-            Padding(
-              padding:  EdgeInsets.only(right: 15.0.w),
-              child: Container(
-                color: lightBlack,
-                child: Row(
-                  children: [
-                    Icon(writeIcon, color: yellow.withOpacity(0.7),),
-                    SizedBox(width: 10.w,),
-                    Container(
-                      width: 320.w,
-                      child: DropdownBelow(
-                        itemWidth: 350.w,
-                        ///text style inside the menu
-                        itemTextstyle: TextStyle(
+            Container(
+              color: lightBlack,
+              height: 50.h,
+              child: Row(
+                children: [
+                  Padding(
+                    padding:  EdgeInsets.only(right: 15.w),
+                    child: Icon(writeIcon, color: yellow.withOpacity(0.7),),
+                  ),
+                  SizedBox(width: 10.w,),
+                  Container(
+                    width: 320.w,
+                    child: DropdownBelow(
+                      dropdownColor: lightBlack,
+                      itemWidth: 350.w,
+                      ///text style inside the menu
+                      itemTextstyle: TextStyle(
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.w400,
+                        color: white,
+                        fontFamily: 'Cairo',),
+                      ///hint style
+                      boxTextstyle: TextStyle(
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w400,
+                          color: white.withOpacity(0.60),
+                          fontFamily: 'Cairo'),
+                      ///box style
+                      boxPadding:
+                      EdgeInsets.fromLTRB(13.w, 12.h, 13.w, 12.h),
+                      boxWidth: 500.w,
+                      boxHeight: 40.h,
+                      boxDecoration: BoxDecoration(
                           color: lightBlack,
-                          fontFamily: 'Cairo',),
-                        ///hint style
-                        boxTextstyle: TextStyle(
-                            fontSize: 12.sp,
-                            fontWeight: FontWeight.w400,
-                            color: white.withOpacity(0.60),
-                            fontFamily: 'Cairo'),
-                        ///box style
-                        boxPadding:
-                        EdgeInsets.fromLTRB(13.w, 12.h, 13.w, 12.h),
-                        boxWidth: 500.w,
-                        boxHeight: 40.h,
-                        boxDecoration: BoxDecoration(
-                            color: lightBlack,
-                            borderRadius: BorderRadius.circular(8.r)),
-                        ///Icons
-                        icon: const Icon(
-                          Icons.arrow_drop_down,
-                          color: Colors.white54,
-                        ),
-                        hint:  text(context, 'حدد الخدمة', 12, white.withOpacity(0.60)),
-                        value: _selectedTest,
-                        items: _dropDownItem,
-                        onChanged: onChangeDropDownTest,
+                          borderRadius: BorderRadius.circular(8.r)),
+                      ///Icons
+                      icon: const Icon(
+                        Icons.arrow_drop_down,
+                        color: Colors.white54,
                       ),
+                      hint:  text(context, 'حدد الخدمة', 12, white.withOpacity(0.60)),
+                      value: _selectedTest,
+                      items: _dropDownItem,
+                      onChanged: onChangeDropDownTest,
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
             SizedBox(height: 20.h,),

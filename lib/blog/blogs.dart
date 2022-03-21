@@ -1,9 +1,10 @@
-import 'package:dropdown_below/dropdown_below.dart';
 import 'package:faz_application/Models/Methods.dart';
 import 'package:faz_application/Models/Variables.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import 'blogDetails.dart';
 
 class blogs extends StatefulWidget {
   @override
@@ -71,7 +72,7 @@ class _blogsState extends State<blogs> {
                 shrinkWrap: true,
                 children: List.generate(6, (index) {
                   return  InkWell(
-                    onTap: (){},
+                    onTap: (){goToPage(context, blogDetails());},
                     child: Container(
                       height: 150.h,
                       child: Stack(
