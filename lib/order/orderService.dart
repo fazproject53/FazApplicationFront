@@ -115,7 +115,7 @@ class _orderServiceState extends State<orderService> {
             SizedBox(height: 20.h,),
             textFieldDesc(context, 'ادخل رسالتك', 14, false, chatIcon, myController, (value){}),
             SizedBox(height: 50.h,),
-            button(text(context, 'ارسال', 17, blackBackground,fontWeight: FontWeight.bold), (){})
+            button(text(context, 'ارسال', 16, blackBackground), (){})
           ],),
         ),
       ),
