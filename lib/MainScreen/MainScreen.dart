@@ -1,7 +1,10 @@
 import 'package:faz_application/Models/Methods.dart';
 import 'package:faz_application/Models/Variables.dart';
+import 'package:faz_application/order/orderPackage.dart';
+import 'package:faz_application/order/orderService.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:lottie/lottie.dart';
 import 'package:flutter_image_slider/carousel.dart';
 import 'package:flutter_image_slider/indicator/Circle.dart';
@@ -17,10 +20,27 @@ class _MainScreenState extends State<MainScreen> {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
-        floatingActionButton: FloatingActionButton(
-          child: Icon(addIcon, color: blackBackground,),
-          onPressed: (){},
-          backgroundColor:yellow
+        appBar: drowAppBar('الرئيسية'),
+        floatingActionButton: SpeedDial(
+          backgroundColor: yellow,
+          overlayColor: Colors.transparent,
+          animatedIcon: AnimatedIcons.menu_close,
+          children: [
+            SpeedDialChild(
+                backgroundColor: yellow,
+                child: Icon(askPackageIcon),
+                onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context) => orderPackage()));}
+            ),
+            SpeedDialChild(
+                backgroundColor: yellow,
+                child: Icon(askServiceIcon),
+                onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context) => orderService()));}
+            ),
+            SpeedDialChild(
+                backgroundColor: yellow,
+                child: Icon(chatIcon)
+            ),
+          ],
         ),
         backgroundColor: blackBackground,
         body: SingleChildScrollView(child: Column(
@@ -28,7 +48,7 @@ class _MainScreenState extends State<MainScreen> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
           Container(
-          height: 200.h,
+          height: 180.h,
           width: 400.w,
           child: Carousel(
               indicatorBarColor: Colors.black.withOpacity(0.2),
@@ -55,18 +75,20 @@ class _MainScreenState extends State<MainScreen> {
             ]
         ),),
 
-          SizedBox(height: 20.h,),
+          SizedBox(height: 10.h,),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
             InkWell(child: Container(
               height:150.h,
               width: 150.w,
-             decoration: BoxDecoration(color: yellow, borderRadius: BorderRadius.circular(15.r) ),
+             decoration: BoxDecoration(color: lightBlack, borderRadius: BorderRadius.circular(15.r) ),
               child: Column(children: [
+                Padding(
+                  padding:  EdgeInsets.only(top: 20.h),
+                  child: text(context, 'الخدمات', 15, blackBackground),
+                ),
               Lottie.asset('assets/lottie/services.json', height: 100.h, width: 100.w),
-                SizedBox(height: 2.h,),
-                text(context, 'الخدمات', 15, blackBackground)
             ],),),
               onTap: (){},
         ),
@@ -76,11 +98,14 @@ class _MainScreenState extends State<MainScreen> {
               child: Container(
               height:150.h,
               width: 150.w,
-              decoration: BoxDecoration(color: yellow, borderRadius: BorderRadius.circular(15.r) ),
+              decoration: BoxDecoration(color: lightBlack, borderRadius: BorderRadius.circular(15.r) ),
               child: Column(children: [
+                Padding(
+                  padding:  EdgeInsets.only(top: 20.h),
+                  child: text(context, 'من نحن', 15, blackBackground),
+                ),
                 Lottie.asset('assets/lottie/who.json', height: 100.h, width: 100.w),
-                SizedBox(height: 2.h,),
-                text(context, 'من نحن', 15, blackBackground)
+
               ],),),
               onTap: (){},
             ),
@@ -93,11 +118,13 @@ class _MainScreenState extends State<MainScreen> {
               child: Container(
               height:150.h,
               width: 150.w,
-              decoration: BoxDecoration(color: yellow, borderRadius: BorderRadius.circular(15.r) ),
+              decoration: BoxDecoration(color: lightBlack, borderRadius: BorderRadius.circular(15.r) ),
               child: Column(children: [
+                Padding(
+                  padding:  EdgeInsets.only(top: 20.h),
+                  child: text(context, 'المدونة', 15, blackBackground),
+                ),
                 Lottie.asset('assets/lottie/blog.json', height: 100.h, width: 100.w),
-                SizedBox(height: 2.h,),
-                text(context, 'المدونة', 15, blackBackground)
               ],),),
               onTap: (){},
             ),
@@ -106,11 +133,14 @@ class _MainScreenState extends State<MainScreen> {
               child: Container(
               height:150.h,
               width: 150.w,
-              decoration: BoxDecoration(color: yellow, borderRadius: BorderRadius.circular(15.r) ),
+              decoration: BoxDecoration(color: lightBlack, borderRadius: BorderRadius.circular(15.r) ),
               child: Column(children: [
+                Padding(
+                  padding:  EdgeInsets.only(top: 20.h),
+                  child: text(context, 'الباقات', 15, blackBackground),
+                ),
                 Lottie.asset('assets/lottie/bundles.json', height: 100.h, width: 100.w),
-                SizedBox(height: 2.h,),
-                text(context, 'الباقات', 15, blackBackground)
+
               ],),),
               onTap: (){},
             ),
@@ -123,11 +153,14 @@ class _MainScreenState extends State<MainScreen> {
                   child: Container(
                   height:150.h,
                   width: 150.w,
-                  decoration: BoxDecoration(color: yellow, borderRadius: BorderRadius.circular(15.r) ),
+                  decoration: BoxDecoration(color: lightBlack, borderRadius: BorderRadius.circular(15.r) ),
                   child: Column(children: [
+                    Padding(
+                      padding:  EdgeInsets.only(top: 20.h),
+                      child: text(context, 'اعمالنا', 15, blackBackground),
+                    ),
                     Lottie.asset('assets/lottie/our work.json', height: 100.h, width: 100.w),
-                    SizedBox(height: 2.h,),
-                    text(context, 'اعمالنا', 15, blackBackground)
+
                   ],),),
                   onTap: (){},
                 ),
@@ -136,11 +169,14 @@ class _MainScreenState extends State<MainScreen> {
                   child: Container(
                   height:150.h,
                   width: 150.w,
-                  decoration: BoxDecoration(color: yellow, borderRadius: BorderRadius.circular(15.r) ),
+                  decoration: BoxDecoration(color: lightBlack, borderRadius: BorderRadius.circular(15.r) ),
                   child: Column(children: [
+                    Padding(
+                      padding:  EdgeInsets.only(top: 20.h),
+                      child: text(context, 'تواصل معنا', 15, blackBackground),
+                    ),
                     Lottie.asset('assets/lottie/contactus.json', height: 100.h, width: 100.w),
-                    SizedBox(height: 2.h,),
-                    text(context, 'تواصل معنا', 15, blackBackground)
+
                   ],),),
                   onTap: (){},
                     ),
