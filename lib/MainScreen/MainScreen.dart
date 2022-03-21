@@ -1,6 +1,8 @@
 import 'package:faz_application/Models/Methods.dart';
 import 'package:faz_application/Models/Variables.dart';
 import 'package:faz_application/blog/blogs.dart';
+import 'package:faz_application/home/OurWork/OurWork.dart';
+import 'package:faz_application/home/Services/Services.dart';
 import 'package:faz_application/order/orderPackage.dart';
 import 'package:faz_application/order/orderService.dart';
 import 'package:flutter/material.dart';
@@ -9,6 +11,8 @@ import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:lottie/lottie.dart';
 import 'package:flutter_image_slider/carousel.dart';
 import 'package:flutter_image_slider/indicator/Circle.dart';
+
+import '../HomeScreen-Main/AboutUs/about_us_main.dart';
 
 class MainScreen extends StatefulWidget {
   @override
@@ -106,7 +110,7 @@ class _MainScreenState extends State<MainScreen> {
                 ),
               Lottie.asset('assets/lottie/services.json', height: 100.h, width: 100.w),
             ],),),
-              onTap: (){},
+              onTap: (){goToPage(context, Services());},
         ),
 
             SizedBox(width: 20.w),
@@ -123,7 +127,7 @@ class _MainScreenState extends State<MainScreen> {
                 Lottie.asset('assets/lottie/who.json', height: 100.h, width: 100.w),
 
               ],),),
-              onTap: (){},
+              onTap: (){goToPage(context, AboutUsMain());},
             ),
           ],),
           SizedBox(height: 20.h,),
@@ -178,7 +182,7 @@ class _MainScreenState extends State<MainScreen> {
                     Lottie.asset('assets/lottie/our work.json', height: 100.h, width: 100.w),
 
                   ],),),
-                  onTap: (){},
+                  onTap: (){goToPage(context, OurWork());},
                 ),
                 SizedBox(width: 20.w),
                 InkWell(
