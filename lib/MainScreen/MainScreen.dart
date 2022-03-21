@@ -1,5 +1,6 @@
 import 'package:faz_application/Models/Methods.dart';
 import 'package:faz_application/Models/Variables.dart';
+import 'package:faz_application/blog/blogs.dart';
 import 'package:faz_application/order/orderPackage.dart';
 import 'package:faz_application/order/orderService.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +16,7 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
+  bool open = false;
   @override
   Widget build(BuildContext context) {
     return Directionality(
@@ -24,20 +26,34 @@ class _MainScreenState extends State<MainScreen> {
         floatingActionButton: SpeedDial(
           backgroundColor: yellow,
           overlayColor: Colors.transparent,
-          animatedIcon: AnimatedIcons.menu_close,
+          switchLabelPosition: true,
+          icon: open? closeIcon: addIcon,
+          iconTheme: IconThemeData(color: blackBackground),
+          onClose: (){setState(() {
+            open = false;
+          });},
+          onOpen: (){setState(() {
+            open = true;
+          });},
           children: [
             SpeedDialChild(
                 backgroundColor: yellow,
                 child: Icon(askPackageIcon),
+                label: '       طلب خدمة       ',
+                labelBackgroundColor: yellow,
                 onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context) => orderPackage()));}
             ),
             SpeedDialChild(
                 backgroundColor: yellow,
                 child: Icon(askServiceIcon),
+                label: '        طلب باقة       ',
+                labelBackgroundColor: yellow,
                 onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context) => orderService()));}
             ),
             SpeedDialChild(
                 backgroundColor: yellow,
+                labelBackgroundColor: yellow,
+                label: 'المحادثة المباشرة',
                 child: Icon(chatIcon)
             ),
           ],
@@ -126,7 +142,7 @@ class _MainScreenState extends State<MainScreen> {
                 ),
                 Lottie.asset('assets/lottie/blog.json', height: 100.h, width: 100.w),
               ],),),
-              onTap: (){},
+              onTap: (){goToPage(context, blogs());},
             ),
               SizedBox(width: 20.w),
             InkWell(
