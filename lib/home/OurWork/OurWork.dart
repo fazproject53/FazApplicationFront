@@ -52,10 +52,12 @@ class _OurWorkState extends State<OurWork> {
                 SizedBox(
                   height: 15.h,
                 ),
-                Directionality(
-                    textDirection: TextDirection.rtl,
-                    child: Wrap(
-                        runSpacing: 13.0.h, spacing: 12.0.w, children: bouttoms)),
+                Expanded(
+                  child: Directionality(
+                      textDirection: TextDirection.rtl,
+                      child: Wrap(
+                          runSpacing: 13.0.h, spacing: 12.0.w, children: bouttoms)),
+                ),
 
                 SizedBox(
                   height: 10.h,
