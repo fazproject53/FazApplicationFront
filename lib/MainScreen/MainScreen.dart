@@ -8,7 +8,6 @@ import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:lottie/lottie.dart';
 import 'package:flutter_image_slider/carousel.dart';
 import 'package:flutter_image_slider/indicator/Circle.dart';
-
 class MainScreen extends StatefulWidget {
   @override
   State<MainScreen> createState() => _MainScreenState();
@@ -23,22 +22,29 @@ class _MainScreenState extends State<MainScreen> {
         appBar: drowAppBar('الرئيسية'),
         floatingActionButton: SpeedDial(
           backgroundColor: yellow,
+          switchLabelPosition: true,
           overlayColor: Colors.transparent,
           animatedIcon: AnimatedIcons.menu_close,
           children: [
             SpeedDialChild(
                 backgroundColor: yellow,
                 child: Icon(askPackageIcon),
+                label: '       طلب باقة        ',
+                labelBackgroundColor: yellow,
                 onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context) => orderPackage()));}
             ),
             SpeedDialChild(
                 backgroundColor: yellow,
+                labelBackgroundColor: yellow,
                 child: Icon(askServiceIcon),
+                label: '       طلب خدمة        ',
                 onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context) => orderService()));}
             ),
             SpeedDialChild(
+              labelBackgroundColor: yellow,
                 backgroundColor: yellow,
-                child: Icon(chatIcon)
+                child: Icon(chatIcon),
+                label: 'المحادثة المباشرة',
             ),
           ],
         ),
