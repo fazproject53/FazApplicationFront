@@ -75,7 +75,7 @@ class _AboutUsHomeState extends State<AboutUsHome> {
                         SizedBox(
                           height: 10.h,
                         ),
-                        text(context, 'من نحن', 16, yellow, fontWeight: FontWeight.bold),
+                        text(context, 'فاز في سطور', 16, yellow, fontWeight: FontWeight.bold),
                         SizedBox(
                           height: 5.h,
                         ),

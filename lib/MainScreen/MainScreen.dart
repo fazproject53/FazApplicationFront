@@ -13,6 +13,8 @@ import 'package:flutter_image_slider/carousel.dart';
 import 'package:flutter_image_slider/indicator/Circle.dart';
 
 import '../HomeScreen-Main/AboutUs/about_us_main.dart';
+import '../HomeScreen-Main/ContactWithUs/contact_with_us.dart';
+import '../HomeScreen-Main/Packages/packages.dart';
 
 class MainScreen extends StatefulWidget {
   @override
@@ -184,7 +186,9 @@ class _MainScreenState extends State<MainScreen> {
                       Lottie.asset('assets/lottie/bundles.json', height: 100.h, width: 100.w),
 
                     ],),),
-                  onTap: (){},
+                  onTap: (){
+                    goToPage(context, PackagesMain());
+                  },
                 ),
                 SizedBox(width: 20.w),
                 InkWell(
@@ -200,7 +204,9 @@ class _MainScreenState extends State<MainScreen> {
                     Lottie.asset('assets/lottie/contactus.json', height: 100.h, width: 100.w),
 
                   ],),),
-                  onTap: (){},
+                  onTap: (){
+                    goToPage(context, ContactWithUsMain());
+                  },
                     ),
               ],),
             SizedBox(height: 50.h,)
