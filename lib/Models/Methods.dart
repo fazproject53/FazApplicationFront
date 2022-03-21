@@ -91,9 +91,12 @@ Widget textFieldDesc(
       decoration: InputDecoration(
         isDense: false,
         filled: true,
-        prefixIcon: Icon(
-          prefixIcon,
-          color: yellow.withOpacity(0.7),
+        prefixIcon: Padding(
+          padding:  EdgeInsets.only(bottom: 130.h),
+          child: Icon(
+            prefixIcon,
+            color: yellow.withOpacity(0.7),
+          ),
         ),
         hintStyle: TextStyle(
             color: white.withOpacity(0.6),
