@@ -16,7 +16,7 @@ class _blogDetailsState extends State<blogDetails> {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
-        appBar: drowAppBar('تفاصيل المدونة'),
+        appBar: appBar('تفاصيل المدونة',context),
         backgroundColor: blackBackground,
         body: SingleChildScrollView(child: Column(
           mainAxisAlignment: MainAxisAlignment.start,

@@ -99,6 +99,22 @@ class _MainScreenState extends State<MainScreen> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              InkWell(
+                child: Container(
+                  height:150.h,
+                  width: 150.w,
+                  decoration: BoxDecoration(color: lightBlack, borderRadius: BorderRadius.circular(15.r) ),
+                  child: Column(children: [
+                    Padding(
+                      padding:  EdgeInsets.only(top: 20.h),
+                      child: text(context, 'من نحن', 15, yellow),
+                    ),
+                    Lottie.asset('assets/lottie/who.json', height: 100.h, width: 100.w),
+
+                  ],),),
+                onTap: (){goToPage(context, AboutUsMain());},
+              ),
+              SizedBox(width: 20.w),
             InkWell(child: Container(
               height:150.h,
               width: 150.w,
@@ -113,27 +129,27 @@ class _MainScreenState extends State<MainScreen> {
               onTap: (){goToPage(context, Services());},
         ),
 
-            SizedBox(width: 20.w),
-            InkWell(
-              child: Container(
-              height:150.h,
-              width: 150.w,
-              decoration: BoxDecoration(color: lightBlack, borderRadius: BorderRadius.circular(15.r) ),
-              child: Column(children: [
-                Padding(
-                  padding:  EdgeInsets.only(top: 20.h),
-                  child: text(context, 'من نحن', 15, yellow),
-                ),
-                Lottie.asset('assets/lottie/who.json', height: 100.h, width: 100.w),
-
-              ],),),
-              onTap: (){goToPage(context, AboutUsMain());},
-            ),
           ],),
           SizedBox(height: 20.h,),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              InkWell(
+                child: Container(
+                  height:150.h,
+                  width: 150.w,
+                  decoration: BoxDecoration(color: lightBlack, borderRadius: BorderRadius.circular(15.r) ),
+                  child: Column(children: [
+                    Padding(
+                      padding:  EdgeInsets.only(top: 20.h),
+                      child: text(context, 'اعمالنا', 15, yellow),
+                    ),
+                    Lottie.asset('assets/lottie/our work.json', height: 100.h, width: 100.w),
+
+                  ],),),
+                onTap: (){goToPage(context, OurWork());},
+              ),
+              SizedBox(width: 20.w),
             InkWell(
               child: Container(
               height:150.h,
@@ -148,22 +164,8 @@ class _MainScreenState extends State<MainScreen> {
               ],),),
               onTap: (){goToPage(context, blogs());},
             ),
-              SizedBox(width: 20.w),
-            InkWell(
-              child: Container(
-              height:150.h,
-              width: 150.w,
-              decoration: BoxDecoration(color: lightBlack, borderRadius: BorderRadius.circular(15.r) ),
-              child: Column(children: [
-                Padding(
-                  padding:  EdgeInsets.only(top: 20.h),
-                  child: text(context, 'الباقات', 15, yellow),
-                ),
-                Lottie.asset('assets/lottie/bundles.json', height: 100.h, width: 100.w),
 
-              ],),),
-              onTap: (){},
-            ),
+
           ],),
             SizedBox(height: 20.h,),
             Row(
@@ -171,18 +173,18 @@ class _MainScreenState extends State<MainScreen> {
               children: [
                 InkWell(
                   child: Container(
-                  height:150.h,
-                  width: 150.w,
-                  decoration: BoxDecoration(color: lightBlack, borderRadius: BorderRadius.circular(15.r) ),
-                  child: Column(children: [
-                    Padding(
-                      padding:  EdgeInsets.only(top: 20.h),
-                      child: text(context, 'اعمالنا', 15, yellow),
-                    ),
-                    Lottie.asset('assets/lottie/our work.json', height: 100.h, width: 100.w),
+                    height:150.h,
+                    width: 150.w,
+                    decoration: BoxDecoration(color: lightBlack, borderRadius: BorderRadius.circular(15.r) ),
+                    child: Column(children: [
+                      Padding(
+                        padding:  EdgeInsets.only(top: 20.h),
+                        child: text(context, 'الباقات', 15, yellow),
+                      ),
+                      Lottie.asset('assets/lottie/bundles.json', height: 100.h, width: 100.w),
 
-                  ],),),
-                  onTap: (){goToPage(context, OurWork());},
+                    ],),),
+                  onTap: (){},
                 ),
                 SizedBox(width: 20.w),
                 InkWell(
