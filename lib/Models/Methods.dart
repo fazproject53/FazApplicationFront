@@ -192,16 +192,18 @@ Widget padding(double left, double right, Widget child) {
 ///-----------------------------------------------------------------------------
 
 ///---------------------------------AppBar Section-----------------------------
-PreferredSizeWidget? drowAppBar(String title, {void Function()? onPressed}) {
+PreferredSizeWidget? drowAppBar(String title, context) {
   return AppBar(
     elevation: 0,
     backgroundColor: blackBackground,
     centerTitle: true,
     title: Text(title,
-        style: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.bold)),
+        style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold)),
     actions: [
       IconButton(
-          onPressed: onPressed,
+          onPressed: (){
+            Navigator.pop(context);
+          },
           icon: Icon(
             backIcon,
             color: white,
@@ -212,7 +214,7 @@ PreferredSizeWidget? drowAppBar(String title, {void Function()? onPressed}) {
 
 appBar(String title, BuildContext context ,{Color color = blackBackground}){
   return AppBar(
-    title: Text(title),
+    title: Text(title , style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold)),
     centerTitle: true,
     leading: IconButton(
       padding: EdgeInsets.only(right: 20.w),

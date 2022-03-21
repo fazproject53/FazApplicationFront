@@ -39,7 +39,7 @@ class _ServicesState extends State<Services> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: blackBackground,
-        appBar: drowAppBar("خدماتنا"),
+        appBar: drowAppBar("خدماتنا",context),
         drawer: const Drawer(),
         body: Align(
           alignment: Alignment.topRight,
