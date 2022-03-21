@@ -120,13 +120,16 @@ class _OurWorkState extends State<OurWork> {
 
   bottomsShape() {
     for (int i = 0; i < title.length; i++) {
-      bouttoms.add(container(
+      bouttoms.add(
+          container(
         text(context, title[i], 12, white, align: TextAlign.center),
         () {},
         width: widgetWidth[i],
         height: 40.h,
+        backgroundColor: yellow
+      )
 
-      ));
+      );
     }
   }
 }

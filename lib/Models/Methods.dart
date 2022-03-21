@@ -153,7 +153,26 @@ Widget gradientContainer(double width, double height, Widget child, onTap,
 }
 
 ///-----------------------------------------------------------------------------
+///-----------------------------------------------------------------------------
+Widget container( Widget child, onTap,
+    { BoxConstraints? constraints,double? height,double? width,Color color = yellow, double radius = 8.0,Color backgroundColor=Colors.transparent}) {
+  return InkWell(
+    child: Container(
 
+      constraints:constraints,
+      width: width?.w,
+      height: height,
+      child: Center(child: child),
+      decoration: BoxDecoration(
+
+        color: backgroundColor,
+        border: Border.all(color: color, width: 1.5.w),
+        borderRadius: BorderRadius.circular(radius.r),
+      ),
+    ),
+    onTap: onTap,
+  );
+}
 ///---------------------------------Padding Section-----------------------------
 ///Padding with top
 Widget paddingWithTop(double pL, double pR, double pT, Widget child,
