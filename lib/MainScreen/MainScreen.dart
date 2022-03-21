@@ -1,3 +1,4 @@
+import 'package:faz_application/HomeScreen-Main/AboutUs/about_us_main.dart';
 import 'package:faz_application/Models/Methods.dart';
 import 'package:faz_application/Models/Variables.dart';
 import 'package:faz_application/order/orderPackage.dart';
@@ -112,7 +113,9 @@ class _MainScreenState extends State<MainScreen> {
                     Lottie.asset('assets/lottie/who.json', height: 100.h, width: 100.w),
 
                   ],),),
-                onTap: (){},
+                onTap: (){
+                  goToPage(context, AboutUsMain());
+                },
               ),
               SizedBox(width: 20.w),
             InkWell(child: Container(

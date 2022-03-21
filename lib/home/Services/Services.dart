@@ -74,7 +74,6 @@ class _ServicesState extends State<Services> {
         context,
         "تصميم مواقع الكترونية و تطبيقات للجوال بجودة فائقة و تكلفة اقتصادية منافسة",
         18,
-        
         white);
   }
 

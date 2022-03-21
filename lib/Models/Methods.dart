@@ -1,6 +1,5 @@
 ///Import Sections
 import 'package:faz_application/Models/Variables.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -155,7 +154,7 @@ Widget gradientContainer(double width, double height, Widget child, onTap,
 
 ///-----------------------------------------------------------------------------
 
-///---------------------------------Padding Section------------------------------
+///---------------------------------Padding Section-----------------------------
 ///Padding with top
 Widget paddingWithTop(double pL, double pR, double pT, Widget child,
     {double pB = 0.0}) {
@@ -173,14 +172,16 @@ Widget padding(double left, double right, Widget child) {
   );
 }
 
-///-add par----------------------------------------------------------------------------
+///-----------------------------------------------------------------------------
+
+///---------------------------------AppBar Section-----------------------------
 PreferredSizeWidget? drowAppBar(String title, {void Function()? onPressed}) {
   return AppBar(
     elevation: 0,
     backgroundColor: blackBackground,
     centerTitle: true,
     title: Text(title,
-        style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold)),
+        style: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.bold)),
     actions: [
       IconButton(
           onPressed: onPressed,
@@ -190,4 +191,43 @@ PreferredSizeWidget? drowAppBar(String title, {void Function()? onPressed}) {
           ))
     ],
   );
+}
+
+appBar(String title, BuildContext context ,{Color color = blackBackground}){
+  return AppBar(
+    title: Text(title),
+    centerTitle: true,
+    leading: IconButton(
+      padding: EdgeInsets.only(right: 20.w),
+      icon: const Icon(Icons.arrow_back_ios),
+      color: white,
+      onPressed: () {
+        Navigator.pop(context);
+      },
+    ),
+    backgroundColor: color,
+    elevation: 0,
+  );
+}
+
+///app bar without back icon
+AppBarNoIcon(String title,{Color color = blackBackground}){
+  return AppBar(
+    title: Text(title,style:TextStyle(
+        fontSize:22.sp,
+        fontFamily: 'Cairo',
+        color: white
+    ),
+    ),
+    centerTitle: true,
+    backgroundColor: color,
+    elevation: 0,
+  );
+}
+///-----------------------------------------------------------------------------
+
+
+///Navigator
+goToPage(context, pageName) {
+  return Navigator.push(context, MaterialPageRoute(builder: (context) => pageName));
 }
