@@ -122,6 +122,7 @@ class _OurWorkState extends State<OurWork> {
         () {},
         width: widgetWidth[i],
         height: 40.h,
+
       ));
     }
   }
