@@ -33,7 +33,8 @@ class _orderPackageState extends State<orderPackage> {
   List<DropdownMenuItem> buildDropdownTestItems(List list){
     List<DropdownMenuItem> items = [];
     for(var i in list){
-      items.add(DropdownMenuItem(value: i, child: Text(i['keyword'],textDirection: TextDirection.rtl,)));
+      items.add(DropdownMenuItem(
+          alignment: Alignment.centerRight,value: i, child: Text(i['keyword'])));
     }
     return items;
   }

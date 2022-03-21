@@ -45,14 +45,14 @@ class _MainScreenState extends State<MainScreen> {
                 child: Icon(askPackageIcon),
                 label: '       طلب خدمة       ',
                 labelBackgroundColor: yellow,
-                onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context) => orderPackage()));}
+                onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context) => orderService()));}
             ),
             SpeedDialChild(
                 backgroundColor: yellow,
                 child: Icon(askServiceIcon),
                 label: '        طلب باقة       ',
                 labelBackgroundColor: yellow,
-                onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context) => orderService()));}
+                onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context) => orderPackage()));}
             ),
             SpeedDialChild(
                 backgroundColor: yellow,
