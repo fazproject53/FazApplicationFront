@@ -59,7 +59,7 @@ class _orderServiceState extends State<orderService> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SizedBox(height: 70.h,),
-          textFieldIcon(context, 'ادخل اسمك الكامل', 14, false, userIcon, myController, (value){}, false),
+            textFieldIcon(context, 'ادخل اسمك الكامل', 14, false, userIcon, myController, (value){}, false),
             SizedBox(height: 20.h,),
             textFieldIcon(context, 'ادخل بريدك الالكتروني', 14, false, emailIcon, myController, (value){}, false),
             SizedBox(height: 20.h,),
@@ -74,9 +74,9 @@ class _orderServiceState extends State<orderService> {
                     Icon(writeIcon, color: yellow.withOpacity(0.7),),
                     SizedBox(width: 10.w,),
                     Container(
-                      width: 360.w,
+                      width: 320.w,
                       child: DropdownBelow(
-                        itemWidth: 380.w,
+                        itemWidth: 350.w,
                         ///text style inside the menu
                         itemTextstyle: TextStyle(
                           fontSize: 12.sp,
@@ -102,7 +102,7 @@ class _orderServiceState extends State<orderService> {
                           Icons.arrow_drop_down,
                           color: Colors.white54,
                         ),
-                        hint:  text(context, 'حدد الخدمة', 14, white.withOpacity(0.60)),
+                        hint:  text(context, 'حدد الخدمة', 12, white.withOpacity(0.60)),
                         value: _selectedTest,
                         items: _dropDownItem,
                         onChanged: onChangeDropDownTest,
