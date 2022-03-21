@@ -14,6 +14,17 @@ class OurWork extends StatefulWidget {
 class _OurWorkState extends State<OurWork> {
   bool? isScreenWide;
   List<Widget> bouttoms = [];
+  bool colored=true;
+  bool unColored= false;
+  List<bool> coloredBottom=[true,false,false,false,false,false];
+
+  bool allBottom=true;
+  bool webBottom=false;
+  bool idBottom=false;
+  bool mobileBottom=false;
+  bool socialBottom=false;
+  bool searchBottom=false;
+
   List<String> title = [
     "الكل",
     "تصميم المواقع",
@@ -119,17 +130,74 @@ class _OurWorkState extends State<OurWork> {
   }
 
   bottomsShape() {
+    setState(() {
+    });
     for (int i = 0; i < title.length; i++) {
       bouttoms.add(
           container(
-        text(context, title[i], 12, white, align: TextAlign.center),
-        () {},
+        text(context, title[i], 12, coloredBottom[i]?blackBackground:white, align: TextAlign.center),
+        () {
+
+         if(i==0){
+           all(i);
+         }else if(i==1){
+           webDesign(i);
+         }else if(i==2){
+           identityDesign(i);
+         }else if(i==3){
+           mobileDevelopment(i);
+         }else if(i==4){
+           socialMedia(i);
+         }else{
+           searchEngines(i);
+         }
+        },
         width: widgetWidth[i],
         height: 40.h,
-        backgroundColor: yellow
+        backgroundColor: coloredBottom[i]==true ?yellow:transparent
       )
 
       );
     }
   }
+
+
+  void all(int i) {
+   setState(() {
+     print(coloredBottom);
+     coloredBottom[i]=true;
+
+
+
+   });
+  }
+  void webDesign(int i) {
+    setState(() {
+      coloredBottom[i]=true;
+      coloredBottom[i-1]=false;
+      print(coloredBottom);
+    });
+  }
+
+
+
+  void identityDesign(int i) { setState(() {
+    coloredBottom[i]=true;
+
+  });}
+
+  void mobileDevelopment(int i) { setState(() {
+    coloredBottom[i]=true;
+
+  });}
+
+  void socialMedia(int i) { setState(() {
+    coloredBottom[i]=true;
+
+  });}
+
+  void searchEngines(int i) { setState(() {
+    coloredBottom[i]=true;
+
+  });}
 }
