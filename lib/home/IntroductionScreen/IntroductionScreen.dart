@@ -69,13 +69,16 @@ class _IntroductionState extends State<Introduction> {
                               child: SmoothPageIndicator(
                             controller: pageController,
                             count: 3,
+                           onDotClicked:( index){
+                              pageController.jumpToPage(index);
+                           } ,
                             effect: JumpingDotEffect(
                                 spacing: 15.0,
                                 radius: 20.0.r,
                                 dotWidth: 10.0,
                                 dotHeight: 10.0,
                                 dotColor: Colors.grey,
-
+                                verticalOffset: 15,
                                 activeDotColor: yellow),
                           )),
                         ],
