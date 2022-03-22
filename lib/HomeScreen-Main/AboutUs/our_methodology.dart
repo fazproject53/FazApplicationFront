@@ -90,6 +90,9 @@ class _OurMethodologyHomeState extends State<OurMethodologyHome> {
       height: 175.h,
       child: Card(
         color: cardColor,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10.0.r),
+        ),
         child: Padding(
           padding: EdgeInsets.only(top: 15.h, right: 15.w),
           child: Column(
