@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
               fontFamily: "Cairo",
               backgroundColor: blackBackground,
             ),
-            home: MainScreen()
+            home: const Introduction()
             //----------------------------------
             ),
       ),
