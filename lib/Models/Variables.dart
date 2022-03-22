@@ -5,11 +5,11 @@ import 'package:flutter/material.dart';
 ///Colors
 const Color blackBackground = Color(0xFF000000);
 const Color white = Color(0xFFFFFFFF);
-const Color yellow = Color(0xFFECBB5C);
+const Color yellow = Color(0xFFC99E50);
 const Color grey = Color(0xFF323435);
 const Color lightBlack = Color(0xFF171616); ///Used in texts fields and container
 const Color lightPurple = Color(0xFF7B7890);
-const Color cardColor = Color(0xFF0D0D0D);
+const Color cardColor = Color(0xFF242424);
 const Color transparent = Colors.transparent;
 
 ///Icons

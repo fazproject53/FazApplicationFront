@@ -59,8 +59,9 @@ class _blogsState extends State<blogs> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: 50.h,),
-              text(context, 'ابحث عن ما تريدة في المدونة', 18, white, family: 'DIN Next LT Arabic'),
-              text(context, 'نقدم لك مجموعة من المقالات المفيدة التي سوف توسع مداركك', 25, white, family: 'DIN Next LT Arabic'),
+              text(context, 'ابحث عن ما تريدة في المدونة', 14, white, ),
+              SizedBox(height: 10.h,),
+              text(context, 'نقدم لك مجموعة من المقالات المفيدة التي سوف توسع مداركك', 16, white,),
               SizedBox(height: 20.h,),
 
               textFieldIcon(context, 'ابحث عن اي مقالة تريدها', 14, false, searchIcon, myController, (value){}, false),

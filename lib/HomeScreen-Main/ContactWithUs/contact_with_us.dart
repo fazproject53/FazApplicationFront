@@ -46,8 +46,8 @@ class _ContactWithUsHomeState extends State<ContactWithUsHome> {
                   15,
                   15,
                   35,
-                  textFieldIcon(context, 'ادخل اسمك الكامل', 14, false,
-                      userIcon, nameControllerUs, (value) {}, false),
+                  textFieldIcon(context, 'الاسم', 12, false, userIcon,
+                      nameControllerUs, (value) {}, false),
                 ),
 
                 ///Enter Your Email
@@ -55,7 +55,7 @@ class _ContactWithUsHomeState extends State<ContactWithUsHome> {
                   15,
                   15,
                   12,
-                  textFieldIcon(context, 'ادخل بريدك الالكتروني', 14, false,
+                  textFieldIcon(context, 'البريد الالكتروني', 12, false,
                       emailIcon, emailControllerUs, (value) {}, false),
                 ),
 
@@ -64,8 +64,8 @@ class _ContactWithUsHomeState extends State<ContactWithUsHome> {
                   15,
                   15,
                   12,
-                  textFieldIcon(context, 'ادخل رقم هاتفك', 14, false, phoneNumberIcon,
-                      phoneControllerUs, (value) {}, false),
+                  textFieldIcon(context, 'رقم الجوال', 12, false,
+                      phoneNumberIcon, phoneControllerUs, (value) {}, false),
                 ),
 
                 ///Title
@@ -73,8 +73,8 @@ class _ContactWithUsHomeState extends State<ContactWithUsHome> {
                   15,
                   15,
                   12,
-                  textFieldIcon(context, 'ادخل الموضوع باختصار', 14, false,
-                      titleIcon, titleControllerUs, (value) {}, false),
+                  textFieldIcon(context, 'العنوان', 12, false, titleIcon,
+                      titleControllerUs, (value) {}, false),
                 ),
                 paddingWithTop(
                     15,
@@ -83,8 +83,7 @@ class _ContactWithUsHomeState extends State<ContactWithUsHome> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        text(context, 'ادخل نص الرسالة', 14,
-                            white.withOpacity(0.7)),
+                        text(context, 'نص الرسالة', 12, white.withOpacity(0.7)),
                       ],
                     )),
 
@@ -102,8 +101,6 @@ class _ContactWithUsHomeState extends State<ContactWithUsHome> {
                   25,
                   button(text(context, 'ارسال', 12, blackBackground), () {}),
                 ),
-
-
               ],
             )));
   }

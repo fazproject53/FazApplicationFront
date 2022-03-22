@@ -36,8 +36,8 @@ class _OurPartnerHomeState extends State<OurPartnerHome> {
       padding:  EdgeInsets.only(top: 40.h, left: 60.w,),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Image(
+        children: const [
+           Image(
             image: AssetImage('assets/image/Pages.png'),
           ),
         ],

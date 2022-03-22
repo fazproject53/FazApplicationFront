@@ -34,15 +34,15 @@ class AboutUsHome extends StatefulWidget {
 
 class _AboutUsHomeState extends State<AboutUsHome> {
   Widget title() {
-    return text(context, "موقع فاز", 14, white, family: 'DIN Next LT Arabic');
+    return text(context, "موقع فاز", 14, white,);
   }
 
   Widget subTitle() {
     return text(
         context,
         "نحن شركة فاز لتصميم أرقى و أفضل مواقع الأنترنت المكونة من مجموعة من أهم مصممين و مبرمجين المواقع",
-        22,
-        white, family: 'DIN Next LT Arabic');
+        16,
+        white,);
   }
 
   @override

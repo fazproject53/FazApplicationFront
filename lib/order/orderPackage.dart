@@ -57,11 +57,11 @@ class _orderPackageState extends State<orderPackage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SizedBox(height: 70.h,),
-            textFieldIcon(context, 'ادخل اسمك الكامل', 14, false, userIcon, nameControllerPackage, (value){}, false),
+            textFieldIcon(context, 'الاسم', 12, false, userIcon, nameControllerPackage, (value){}, false),
             SizedBox(height: 20.h,),
-            textFieldIcon(context, 'ادخل بريدك الالكتروني', 14, false, emailIcon, emailControllerPackage, (value){}, false),
+            textFieldIcon(context, 'البريد الالكتروني', 12, false, emailIcon, emailControllerPackage, (value){}, false),
             SizedBox(height: 20.h,),
-            textFieldIcon(context, 'ادخل رقم جوالك', 14, false, phoneNumberIcon, phoneControllerPackage, (value){}, false),
+            textFieldIcon(context, 'رقم الجوال', 12, false, phoneNumberIcon, phoneControllerPackage, (value){}, false),
             SizedBox(height: 20.h,),
             Container(
               height: 50.h,
@@ -69,10 +69,10 @@ class _orderPackageState extends State<orderPackage> {
               child: Row(
                 children: [
                   Padding(
-                    padding:  EdgeInsets.only(right: 5.0.w),
+                    padding: EdgeInsets.only(right: 10.w),
                     child: Icon(writeIcon, color: yellow.withOpacity(0.7),),
                   ),
-                  SizedBox(width: 10.w,),
+                  SizedBox(width: 3.w,),
                   Container(
                     width: 320.w,
                     child: DropdownBelow(
@@ -94,7 +94,7 @@ class _orderPackageState extends State<orderPackage> {
                       boxPadding:
                       EdgeInsets.fromLTRB(0.w, 12.h, 13.w, 12.h),
                       boxWidth: 500.w,
-                      boxHeight: 40.h,
+                      boxHeight: 45.h,
                       boxDecoration: BoxDecoration(
                           color: lightBlack,
                           borderRadius: BorderRadius.circular(8.r)),
@@ -113,9 +113,9 @@ class _orderPackageState extends State<orderPackage> {
               ),
             ),
             SizedBox(height: 20.h,),
-            textFieldDesc(context, 'ادخل رسالتك', 14, false, chatIcon, descriptionControllerPackage, (value){}),
+            textFieldDesc(context, 'نص الرسالة', 14, false, chatIcon, descriptionControllerPackage, (value){}),
             SizedBox(height: 50.h,),
-            button(text(context, 'ارسال', 16, blackBackground), (){})
+            button(text(context, 'ارسال', 12, blackBackground), (){})
           ],),
         ),
       ),

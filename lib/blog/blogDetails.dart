@@ -48,9 +48,10 @@ class _blogDetailsState extends State<blogDetails> {
               5.w,5.w,  Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  text(context, 'الحقيقة المثبتة', 26, white, family: 'DIN Next LT Arabic'),
+                  text(context, 'الحقيقة المثبتة', 18, white,),
+                  SizedBox(height: 10.h,),
                   text(context, 'هنا دائما تاتي مرحلة التصمم في المرتبة الاول هنا دائما تاتي مرحلة التصمم في المرتبة الاول هنا دائما تاتي مرحلة التصمم في'
-                      ' المرتبة الاول هنا دائما تاتي مرحلة التصمم في المرتبة الاول هنا دائما تاتي مرحلة التصمم في المرتبة الاول', 20, white, family: 'DIN Next LT Arabic', align: TextAlign.justify),
+                      ' المرتبة الاول هنا دائما تاتي مرحلة التصمم في المرتبة الاول هنا دائما تاتي مرحلة التصمم في المرتبة الاول', 14, white, align: TextAlign.justify),
                 ],
               ),
             )

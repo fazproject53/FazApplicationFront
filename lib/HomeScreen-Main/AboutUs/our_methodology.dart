@@ -30,16 +30,15 @@ class OurMethodologyHome extends StatefulWidget {
 
 class _OurMethodologyHomeState extends State<OurMethodologyHome> {
   Widget title() {
-    return text(context, "منهجيتنا", 14, white, family: 'DIN Next LT Arabic');
+    return text(context, "منهجيتنا", 14, white,);
   }
 
   Widget subTitle() {
     return text(
         context,
         "نسعى دائما لتقديم الافضل في موقعنا نعتني بعملائنا ونهتم بارائهم فهم مصدر إلهام لأعمالنا الناجحة",
-        20,
-        white,
-        family: 'DIN Next LT Arabic');
+        16,
+        white,);
   }
 
   List<String> methodologyTitle = [

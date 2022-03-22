@@ -61,7 +61,7 @@ class _OurWorkState extends State<OurWork> {
                 ),
                 description(),
                 SizedBox(
-                  height: 15.h,
+                  height: 25.h,
                 ),
                 Expanded(
                   child: Directionality(
@@ -102,7 +102,7 @@ class _OurWorkState extends State<OurWork> {
       child: text(
           context,
           "عملائنا ثقتهم بنا سر نجاحنا ونحن في شركة فاز نحرص دائما على تقديم افضل خدمة لـ زبائننا",
-          16,
+          14,
           white,
    align: TextAlign.justify
       ),

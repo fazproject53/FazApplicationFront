@@ -41,7 +41,7 @@ class _ServicesState extends State<Services> {
     return Scaffold(
         backgroundColor: blackBackground,
         appBar: drowAppBar("خدماتنا",context),
-        drawer: const Drawer(),
+        drawer: drawer(context),
         body: Align(
           alignment: Alignment.topRight,
           child: Padding(
@@ -55,7 +55,7 @@ class _ServicesState extends State<Services> {
                 ),
                 description(),
                 SizedBox(
-                  height: 5.h,
+                  height: 25.h,
                 ),
                 Expanded(child: services()),
 
@@ -74,8 +74,7 @@ class _ServicesState extends State<Services> {
     return text(
         context,
         "تصميم مواقع الكترونية و تطبيقات للجوال بجودة فائقة و تكلفة اقتصادية منافسة",
-        16,
-        
+        14,
         white);
   }
 
@@ -94,6 +93,9 @@ class _ServicesState extends State<Services> {
       height: 146.h,
       child: Card(
         color: cardColor,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10.0.r),
+        ),
         child: Column(children: [
           Expanded(
               flex: 2,
@@ -104,13 +106,11 @@ class _ServicesState extends State<Services> {
                       fontWeight: FontWeight.bold),
                 ),
                 subtitle: Column(
-                 
-                  crossAxisAlignment: CrossAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                   
                     text(context, subtitle[index], 12, white),
                     Padding(
-                      padding: EdgeInsets.symmetric(vertical: 24.0.h),
+                      padding: EdgeInsets.symmetric(vertical: 10.0.h),
                       child: gradientContainer(89, 30,
                           text(context, "أطلب الخدمة", 12, white), () {
                         goToPage(context, orderService());

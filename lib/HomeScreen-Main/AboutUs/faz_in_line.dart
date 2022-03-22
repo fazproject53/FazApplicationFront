@@ -35,22 +35,22 @@ class FazInLineHome extends StatefulWidget {
 class _FazInLineHomeState extends State<FazInLineHome> {
 
   Widget title() {
-    return text(context, "فاز في سطور", 14, white, family: 'DIN Next LT Arabic');
+    return text(context, "فاز في سطور", 14, white,);
   }
 
   Widget subTitle() {
     return text(
         context,
         "نسعى دائما لتقديم الافضل في موقعنا نعتني بعملائنا ونهتم بارائهم فهم مصدر إلهام لأعمالنا الناجحة",
-        20,
-        white, family: 'DIN Next LT Arabic');
+        16,
+        white, );
   }
 
   Widget description() {
     return text(
         context,
         "فاز في سطورفاز في سطورفاز في سطورفاز في سطورفاز في سطورفاز في سطورفاز في سطورفاز في سطورفاز في سطورفاز",
-        13,
+        11,
         white, );
   }
 
