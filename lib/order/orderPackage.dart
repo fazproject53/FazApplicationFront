@@ -57,11 +57,11 @@ class _orderPackageState extends State<orderPackage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SizedBox(height: 70.h,),
-            textFieldIcon(context, 'ادخل اسمك الكامل', 14, false, userIcon, myController, (value){}, false),
+            textFieldIcon(context, 'ادخل اسمك الكامل', 14, false, userIcon, nameControllerPackage, (value){}, false),
             SizedBox(height: 20.h,),
-            textFieldIcon(context, 'ادخل بريدك الالكتروني', 14, false, emailIcon, myController, (value){}, false),
+            textFieldIcon(context, 'ادخل بريدك الالكتروني', 14, false, emailIcon, emailControllerPackage, (value){}, false),
             SizedBox(height: 20.h,),
-            textFieldIcon(context, 'ادخل رقم جوالك', 14, false, phoneNumberIcon, myController, (value){}, false),
+            textFieldIcon(context, 'ادخل رقم جوالك', 14, false, phoneNumberIcon, phoneControllerPackage, (value){}, false),
             SizedBox(height: 20.h,),
             Container(
               height: 50.h,
@@ -69,7 +69,7 @@ class _orderPackageState extends State<orderPackage> {
               child: Row(
                 children: [
                   Padding(
-                    padding:  EdgeInsets.only(right: 15.0.w),
+                    padding:  EdgeInsets.only(right: 5.0.w),
                     child: Icon(writeIcon, color: yellow.withOpacity(0.7),),
                   ),
                   SizedBox(width: 10.w,),
@@ -92,7 +92,7 @@ class _orderPackageState extends State<orderPackage> {
                           fontFamily: 'Cairo'),
                       ///box style
                       boxPadding:
-                      EdgeInsets.fromLTRB(13.w, 12.h, 13.w, 12.h),
+                      EdgeInsets.fromLTRB(0.w, 12.h, 13.w, 12.h),
                       boxWidth: 500.w,
                       boxHeight: 40.h,
                       boxDecoration: BoxDecoration(
@@ -113,7 +113,7 @@ class _orderPackageState extends State<orderPackage> {
               ),
             ),
             SizedBox(height: 20.h,),
-            textFieldDesc(context, 'ادخل رسالتك', 14, false, chatIcon, myController, (value){}),
+            textFieldDesc(context, 'ادخل رسالتك', 14, false, chatIcon, descriptionControllerPackage, (value){}),
             SizedBox(height: 50.h,),
             button(text(context, 'ارسال', 16, blackBackground), (){})
           ],),
