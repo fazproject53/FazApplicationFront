@@ -210,7 +210,7 @@ class _MainScreenState extends State<MainScreen> {
                   },
                     ),
               ],),
-            SizedBox(height: 50.h,)
+            SizedBox(height: 70.h,)
         ],),
       ),
       ),

@@ -29,7 +29,7 @@ class _blogDetailsState extends State<blogDetails> {
               child: Stack(
                 alignment: Alignment.bottomRight,
                 children: [
-                  Image.asset('assets/image/blog.png',height: double.infinity, fit: BoxFit.fill,),
+                  Expanded(child: Image.asset('assets/image/blog.png',height: double.infinity, fit: BoxFit.fill, width: MediaQuery.of(context).size.width,)),
                   Padding(
                     padding: EdgeInsets.only(bottom: 3.0.h, right: 10.w),
                     child: Row(
@@ -45,7 +45,7 @@ class _blogDetailsState extends State<blogDetails> {
             ),
             SizedBox(height: 20.h,),
             padding(
-              15.w,15.w,  Column(
+              5.w,5.w,  Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   text(context, 'الحقيقة المثبتة', 26, white, family: 'DIN Next LT Arabic'),
