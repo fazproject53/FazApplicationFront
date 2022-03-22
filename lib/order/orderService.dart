@@ -50,10 +50,8 @@ class _orderServiceState extends State<orderService> {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
-        appBar: AppBar(title: Padding(
-          padding:  EdgeInsets.only(top: 15.h , left: 50.w),
-          child: Center(child: text(context, 'طلب خدمة', 18, white)),
-        ), backgroundColor: blackBackground ),
+        appBar: appBar('طلب خدمة',context),
+        endDrawer: drawer(context),
         backgroundColor: blackBackground,
         body: SingleChildScrollView(child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

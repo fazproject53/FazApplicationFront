@@ -17,6 +17,7 @@ class _blogDetailsState extends State<blogDetails> {
       textDirection: TextDirection.rtl,
       child: Scaffold(
         appBar: appBar('تفاصيل المدونة',context),
+        endDrawer: drawer(context),
         backgroundColor: blackBackground,
         body: SingleChildScrollView(child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
