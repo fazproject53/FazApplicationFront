@@ -32,6 +32,7 @@ IconData descriptionIcon = Icons.description_outlined;
 IconData writeIcon = Icons.border_color_outlined;
 IconData facebookIcon = Icons.facebook;
 IconData backIcon = Icons.arrow_forward_ios_rounded;
+IconData doneIcon = Icons.done;
 
 
 ///Text Controller
