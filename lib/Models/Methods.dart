@@ -1,10 +1,12 @@
 ///Import Sections
 import 'package:faz_application/HomeScreen-Main/AboutUs/about_us_main.dart';
 import 'package:faz_application/HomeScreen-Main/ContactWithUs/contact_with_us.dart';
+import 'package:faz_application/HomeScreen-Main/Packages/packages.dart';
 import 'package:faz_application/MainScreen/MainScreen.dart';
 import 'package:faz_application/Models/Variables.dart';
 import 'package:faz_application/blog/blogs.dart';
 import 'package:faz_application/home/OurWork/OurWork.dart';
+import 'package:faz_application/home/Services/Services.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -294,13 +296,13 @@ Widget drawer(context){
             SizedBox(height: 10.h,),
             InkWell(child: text(context, 'من نحن', 21, white,family: 'DIN Next LT Arabic'), onTap: (){goToPage(context, AboutUsMain());},),
             SizedBox(height: 10.h,),
-            InkWell(child: text(context, 'خدماتنا', 21, white,family: 'DIN Next LT Arabic'), onTap: (){goToPage(context, MainScreen());},),
+            InkWell(child: text(context, 'خدماتنا', 21, white,family: 'DIN Next LT Arabic'), onTap: (){goToPage(context, Services());},),
             SizedBox(height: 10.h,),
             InkWell(child: text(context, 'اعمالنا', 21, white,family: 'DIN Next LT Arabic'), onTap: (){goToPage(context, OurWork());},),
             SizedBox(height: 10.h,),
             InkWell(child: text(context, 'المدونة', 21, white,family: 'DIN Next LT Arabic'), onTap: (){goToPage(context, blogs());},),
             SizedBox(height: 10.h,),
-            InkWell(child: text(context, 'الباقات', 21, white,family: 'DIN Next LT Arabic'), onTap: (){goToPage(context, MainScreen());},),
+            InkWell(child: text(context, 'الباقات', 21, white,family: 'DIN Next LT Arabic'), onTap: (){goToPage(context, PackagesMain());},),
             SizedBox(height: 10.h,),
             InkWell(child: text(context, 'شركاءنا', 21, white,family: 'DIN Next LT Arabic'), onTap: (){goToPage(context, MainScreen());},),
             SizedBox(height: 10.h,),
