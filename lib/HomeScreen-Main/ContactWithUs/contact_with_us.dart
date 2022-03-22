@@ -13,6 +13,7 @@ class ContactWithUsMain extends StatelessWidget {
       textDirection: TextDirection.rtl,
       child: Scaffold(
         appBar: appBar('تواصل معنا', context),
+        endDrawer: drawer(context),
         backgroundColor: blackBackground,
         body: const ContactWithUsHome(),
       ),

@@ -49,7 +49,7 @@ class _OurWorkState extends State<OurWork> {
       child: Scaffold(
           backgroundColor: blackBackground,
           appBar: appBar("اعمالنا", context),
-          drawer: const Drawer(),
+          endDrawer: drawer(context),
           body: Padding(
             padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 40.h),
             child: Column(
@@ -97,12 +97,15 @@ class _OurWorkState extends State<OurWork> {
 //------------------------------------------------------------------------
 
   Widget description() {
-    return text(
-        context,
-        "عملائنا ثقتهم بنا سر نجاحنا ونحن في شركة فاز نحرص دائما على تقديم افضل خدمة لـ زبائننا",
-        16,
-        white,
+    return Align(
+        alignment: Alignment.topRight,
+      child: text(
+          context,
+          "عملائنا ثقتهم بنا سر نجاحنا ونحن في شركة فاز نحرص دائما على تقديم افضل خدمة لـ زبائننا",
+          16,
+          white,
    align: TextAlign.justify
+      ),
     );
   }
 //------------------------------------------------------------------------

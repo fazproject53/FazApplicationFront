@@ -151,7 +151,7 @@ Widget gradientContainer(double width, double height, Widget child, onTap,
       height: height.h,
       child: Center(child: child),
       decoration: BoxDecoration(
-        border: Border.all(color: color, width: 1.5.w),
+        border: Border.all(color: color, width: 1.5.r),
         borderRadius: BorderRadius.circular(radius.r),
       ),
     ),
@@ -171,7 +171,7 @@ Widget container( Widget child, onTap,
       decoration: BoxDecoration(
 
         color: backgroundColor,
-        border: Border.all(color: color, width: 1.5.w),
+        border: Border.all(color: color, width: 1.5.r),
         borderRadius: BorderRadius.circular(radius.r),
       ),
     ),

@@ -1,6 +1,7 @@
 // ignore_for_file: file_names
 
 import 'package:faz_application/Models/Methods.dart';
+import 'package:faz_application/order/orderService.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -111,7 +112,9 @@ class _ServicesState extends State<Services> {
                     Padding(
                       padding: EdgeInsets.symmetric(vertical: 24.0.h),
                       child: gradientContainer(89, 30,
-                          text(context, "أطلب الخدمة", 12, white), () {}),
+                          text(context, "أطلب الخدمة", 12, white), () {
+                        goToPage(context, orderService());
+                          }),
                     )
                   ],
                 ),
@@ -121,7 +124,7 @@ class _ServicesState extends State<Services> {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(3.0.r),
                       child: Image(
-                        image: AssetImage(imageName[index]),
+                        image: AssetImage(imageName[index],),
                         fit: BoxFit.cover,
                       ),
                     )),

@@ -17,6 +17,7 @@ class AboutUsMain extends StatelessWidget {
       textDirection: TextDirection.rtl,
       child: Scaffold(
         appBar: appBar('من نحن', context),
+        endDrawer: drawer(context),
         backgroundColor: blackBackground,
         body: const AboutUsHome(),
       ),

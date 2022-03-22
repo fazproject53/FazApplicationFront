@@ -17,6 +17,7 @@ class PackagesMain extends StatelessWidget {
       textDirection: TextDirection.rtl,
       child: Scaffold(
         appBar: appBar('الباقات', context),
+        endDrawer: drawer(context),
         backgroundColor: blackBackground,
         body: const PackagesHome(),
       ),
