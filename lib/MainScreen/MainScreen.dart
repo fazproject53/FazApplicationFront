@@ -10,11 +10,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:lottie/lottie.dart';
 import 'package:flutter_image_slider/carousel.dart';
-import 'package:flutter_image_slider/indicator/Circle.dart';
-
 import '../HomeScreen-Main/AboutUs/about_us_main.dart';
 import '../HomeScreen-Main/ContactWithUs/contact_with_us.dart';
 import '../HomeScreen-Main/Packages/packages.dart';
+import '../chat/chatRoom.dart';
 
 class MainScreen extends StatefulWidget {
   @override
@@ -61,7 +60,8 @@ class _MainScreenState extends State<MainScreen> {
                 backgroundColor: yellow,
                 labelBackgroundColor: yellow,
                 label: 'المحادثة المباشرة',
-                child: Icon(chatIcon)
+                child: Icon(chatIcon),
+                onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context) => chatRoom()));}
             ),
           ],
         ),
