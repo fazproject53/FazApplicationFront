@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -14,16 +15,16 @@ class OurWork extends StatefulWidget {
 class _OurWorkState extends State<OurWork> {
   bool? isScreenWide;
   List<Widget> bouttoms = [];
-  bool colored=true;
-  bool unColored= false;
-  List<bool> coloredBottom=[true,false,false,false,false,false];
+  bool colored = true;
+  bool unColored = false;
+  List<bool> coloredBottom = [true, false, false, false, false, false];
 
-  bool allBottom=true;
-  bool webBottom=false;
-  bool idBottom=false;
-  bool mobileBottom=false;
-  bool socialBottom=false;
-  bool searchBottom=false;
+  bool allBottom = true;
+  bool webBottom = false;
+  bool idBottom = false;
+  bool mobileBottom = false;
+  bool socialBottom = false;
+  bool searchBottom = false;
 
   List<String> title = [
     "الكل",
@@ -38,19 +39,18 @@ class _OurWorkState extends State<OurWork> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    bottomsShape();
   }
 
   @override
   Widget build(BuildContext context) {
     isScreenWide = MediaQuery.of(context).size.width >= 900;
-    return Scaffold(
-        backgroundColor: blackBackground,
-        appBar: drowAppBar("اعمالنا",context),
-        drawer: const Drawer(),
-        body: Align(
-          alignment: Alignment.topRight,
-          child: Padding(
+    return Directionality(
+      textDirection: TextDirection.rtl,
+      child: Scaffold(
+          backgroundColor: blackBackground,
+          appBar: appBar("اعمالنا", context),
+          drawer: const Drawer(),
+          body: Padding(
             padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 40.h),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.end,
@@ -67,7 +67,16 @@ class _OurWorkState extends State<OurWork> {
                   child: Directionality(
                       textDirection: TextDirection.rtl,
                       child: Wrap(
-                          runSpacing: 13.0.h, spacing: 12.0.w, children: bouttoms)),
+                          runSpacing: 13.0.h,
+                          spacing: 12.0.w,
+                          children: [
+                          all(),
+                           webDesign(),
+                           identityDesign(),
+                           mobileDevelopment(),
+                           socialMedia(),
+                           searchEngines()
+                          ])),
                 ),
 
                 SizedBox(
@@ -77,21 +86,26 @@ class _OurWorkState extends State<OurWork> {
                 //
               ],
             ),
-          ),
-        ));
+          )),
+    );
   }
+//------------------------------------------------------------------------
 
   Widget knowUs() {
-    return text(context, "أفكارنا الذكية ومشاريعنا الخلاقة", 16, white);
+    return Align(alignment: Alignment.topRight,child: text(context, "أفكارنا الذكية ومشاريعنا الخلاقة", 16, white));
   }
+//------------------------------------------------------------------------
 
   Widget description() {
     return text(
         context,
         "عملائنا ثقتهم بنا سر نجاحنا ونحن في شركة فاز نحرص دائما على تقديم افضل خدمة لـ زبائننا",
-        18,
-        white);
+        16,
+        white,
+   align: TextAlign.justify
+    );
   }
+//------------------------------------------------------------------------
 
   Widget gridView() {
     return Expanded(
@@ -110,6 +124,7 @@ class _OurWorkState extends State<OurWork> {
           }),
     );
   }
+//------------------------------------------------------------------------
 
   Widget viewCard() {
     return Card(
@@ -125,86 +140,121 @@ class _OurWorkState extends State<OurWork> {
               colorFilter: ColorFilter.mode(Colors.black45, BlendMode.darken),
             ),
           ),
-
         ));
   }
-
-  bottomsShape() {
-    setState(() {
-    });
-    for (int i = 0; i < title.length; i++) {
-      bouttoms.add(
-          container(
-        text(context, title[i], 12, coloredBottom[i]?blackBackground:white, align: TextAlign.center),
-        () {
-
-         if(i==0){
-
-           all(i);
-
-         }else if(i==1){
-           webDesign(i);
-
-         }else if(i==2){
-           identityDesign(i);
-
-         }else if(i==3){
-           mobileDevelopment(i);
-
-         }else if(i==4){
-           socialMedia(i);
-
-         }else{
-           searchEngines(i);
-
-         }
-        },
-        width: widgetWidth[i],
+//------------------------------------------------------------------------
+  Widget all() {
+    return container(
+        text(context, title[0], 12, allBottom ? blackBackground : white,
+            align: TextAlign.center), () {
+      setState(() {
+        allBottom = true;
+        webBottom = false;
+        idBottom = false;
+        mobileBottom = false;
+        socialBottom = false;
+        searchBottom = false;
+      });
+    },
+        width: widgetWidth[0],
         height: 40.h,
-        backgroundColor: coloredBottom[i]==true ?yellow:transparent
-      )
+        backgroundColor: allBottom ? yellow : transparent);
+  }
+//------------------------------------------------------------------------
 
-      );
-    }
+  Widget webDesign() {
+    return container(
+        text(context, title[1], 12, webBottom ? blackBackground : white,
+            align: TextAlign.center), () {
+      setState(() {
+        allBottom = false;
+        webBottom = true;
+        idBottom = false;
+        mobileBottom = false;
+        socialBottom = false;
+        searchBottom = false;
+      });
+    },
+        width: widgetWidth[1],
+        height: 40.h,
+        backgroundColor: webBottom ? yellow : transparent);
+  }
+//------------------------------------------------------------------------
+
+  Widget identityDesign() {
+    return container(
+        text(context, title[2], 12, idBottom ? blackBackground : white,
+            align: TextAlign.center), () {
+      setState(() {
+        allBottom = false;
+        webBottom = false;
+        idBottom = true;
+        mobileBottom = false;
+        socialBottom = false;
+        searchBottom = false;
+      });
+    },
+        width: widgetWidth[2],
+        height: 40.h,
+        backgroundColor: idBottom ? yellow : transparent);
+  }
+//------------------------------------------------------------------------
+
+  Widget mobileDevelopment() {
+    return container(
+        text(context, title[3], 12, mobileBottom ? blackBackground : white,
+            align: TextAlign.center), () {
+      setState(() {
+        allBottom = false;
+        webBottom = false;
+        idBottom = false;
+        mobileBottom = true;
+        socialBottom = false;
+        searchBottom = false;
+      });
+    },
+        width: widgetWidth[3],
+        height: 40.h,
+        backgroundColor: mobileBottom ? yellow : transparent);
+  }
+//------------------------------------------------------------------------
+
+  Widget socialMedia() {
+    return container(
+        text(context, title[4], 12, socialBottom ? blackBackground : white,
+            align: TextAlign.center), () {
+      setState(() {
+        allBottom = false;
+        webBottom = false;
+        idBottom = false;
+        mobileBottom = false;
+        socialBottom = true;
+        searchBottom = false;
+      });
+    },
+        width: widgetWidth[4],
+        height: 40.h,
+        backgroundColor: socialBottom ? yellow : transparent);
+  }
+//------------------------------------------------------------------------
+
+  Widget searchEngines() {
+    return container(
+        text(context, title[5], 12, searchBottom ? blackBackground : white,
+            align: TextAlign.center), () {
+      setState(() {
+        allBottom = false;
+        webBottom = false;
+        idBottom = false;
+        mobileBottom = false;
+        socialBottom = false;
+        searchBottom = true;
+      });
+    },
+        width: widgetWidth[5],
+        height: 40.h,
+        backgroundColor: searchBottom ? yellow : transparent);
   }
 
 
-  void all(int i) {
-   setState(() {
-     print(coloredBottom);
-     coloredBottom[i]=true;
-
-
-
-   });
-  }
-  void webDesign(int i) {
-    setState(() {
-      coloredBottom[i]=true;
-      coloredBottom[i-1]=false;
-      print(coloredBottom);
-    });
-  }
-
-
-
-  void identityDesign(int i) { setState(() {
-    coloredBottom[i]=true;
-
-  });}
-
-  void mobileDevelopment(int i) { setState(() {
-    coloredBottom[i]=true;
-
-  });}
-
-  void socialMedia(int i) { setState(() {
-    coloredBottom[i]=true;
-
-  });}
-
-  void searchEngines(int i) { setState(() {
-    coloredBottom[i]=true;
-
-  });}
 }
