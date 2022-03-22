@@ -57,25 +57,25 @@ class _IntroductionState extends State<Introduction> {
                         children: [
                           Expanded(
                               child: InkWell(
-                                onTap:(){
-                                  goToPage(context, MainScreen());
-                                }
-
-                      ,
-                                child: text(context, "متابعة", 14, yellow,
-                                    fontWeight: FontWeight.bold),
-                              )),
+                            onTap: () {
+                              goToPage(context, MainScreen());
+                            },
+                            child: text(context, "متابعة", 14, yellow,
+                                fontWeight: FontWeight.bold),
+                          )),
+                          Spacer(),
                           Spacer(),
                           Expanded(
                               child: SmoothPageIndicator(
                             controller: pageController,
                             count: 3,
-                            effect: ScaleEffect(
-                                spacing: 8.0,
-                                radius: 2.0.r,
-                                dotWidth: 24.0,
-                                dotHeight: 16.0,
+                            effect: JumpingDotEffect(
+                                spacing: 15.0,
+                                radius: 20.0.r,
+                                dotWidth: 10.0,
+                                dotHeight: 10.0,
                                 dotColor: Colors.grey,
+
                                 activeDotColor: yellow),
                           )),
                         ],
