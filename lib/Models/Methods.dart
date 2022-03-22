@@ -10,6 +10,8 @@ import 'package:faz_application/home/Services/Services.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../HomeScreen-Main/OurPartners/our_partners.dart';
+
 ///---------------------------------Text Section--------------------------------
 ///Text Widget
 Widget text(
@@ -304,7 +306,7 @@ Widget drawer(context){
             SizedBox(height: 10.h,),
             InkWell(child: text(context, 'الباقات', 21, white,family: 'DIN Next LT Arabic'), onTap: (){goToPage(context, PackagesMain());},),
             SizedBox(height: 10.h,),
-            InkWell(child: text(context, 'شركاءنا', 21, white,family: 'DIN Next LT Arabic'), onTap: (){goToPage(context, MainScreen());},),
+            InkWell(child: text(context, 'شركاءنا', 21, white,family: 'DIN Next LT Arabic'), onTap: (){goToPage(context, OurPartnerMain());},),
             SizedBox(height: 10.h,),
             InkWell(child: text(context, 'تواصل معنا', 21, white,family: 'DIN Next LT Arabic'), onTap: (){goToPage(context, ContactWithUsMain());},),
             SizedBox(height: 10.h,),
