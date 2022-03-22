@@ -73,7 +73,7 @@ class _ServicesState extends State<Services> {
     return text(
         context,
         "تصميم مواقع الكترونية و تطبيقات للجوال بجودة فائقة و تكلفة اقتصادية منافسة",
-        18,
+        16,
         
         white);
   }
