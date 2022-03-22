@@ -60,7 +60,7 @@ class _IntroductionState extends State<Introduction> {
                             onTap: () {
                               goToPage(context, MainScreen());
                             },
-                            child: text(context, "متابعة", 14, yellow,
+                            child: text(context, "تخطي", 14, yellow,
                                 fontWeight: FontWeight.bold),
                           )),
                           Spacer(),
