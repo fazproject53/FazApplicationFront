@@ -50,10 +50,8 @@ class _orderPackageState extends State<orderPackage> {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
-        appBar: AppBar(title: Padding(
-          padding:  EdgeInsets.only(top: 15.h , left: 50.w),
-          child: Center(child: text(context, 'طلب باقة', 18, white)),
-        ), backgroundColor: blackBackground ),
+        appBar: appBar('طلب باقة',context),
+        endDrawer: drawer(context),
         backgroundColor: blackBackground,
         body: SingleChildScrollView(child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,

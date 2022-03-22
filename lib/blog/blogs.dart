@@ -51,6 +51,7 @@ class _blogsState extends State<blogs> {
       textDirection: TextDirection.rtl,
       child: Scaffold(
         appBar: appBar('المدونة',context),
+        endDrawer: drawer(context),
         backgroundColor: blackBackground,
         body: SingleChildScrollView(child: padding(
          10.w,10.w, Column(

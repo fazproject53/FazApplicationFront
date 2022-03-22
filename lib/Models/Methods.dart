@@ -1,5 +1,12 @@
 ///Import Sections
+import 'package:faz_application/HomeScreen-Main/AboutUs/about_us_main.dart';
+import 'package:faz_application/HomeScreen-Main/ContactWithUs/contact_with_us.dart';
+import 'package:faz_application/HomeScreen-Main/Packages/packages.dart';
+import 'package:faz_application/MainScreen/MainScreen.dart';
 import 'package:faz_application/Models/Variables.dart';
+import 'package:faz_application/blog/blogs.dart';
+import 'package:faz_application/home/OurWork/OurWork.dart';
+import 'package:faz_application/home/Services/Services.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -212,6 +219,24 @@ PreferredSizeWidget? drowAppBar(String title, context) {
   );
 }
 
+appBarMain(String title, BuildContext context ,{Color color = blackBackground}){
+  return AppBar(
+    title: Text(title , style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold)),
+    centerTitle: true,
+    leading: IconButton(
+      padding: EdgeInsets.only(right: 20.w),
+      icon: const Icon(Icons.arrow_back_ios),
+      color: white,
+      onPressed: () {
+        Navigator.pop(context);
+      },
+    ),
+    backgroundColor: color,
+    elevation: 0,
+  );
+}
+
+
 appBar(String title, BuildContext context ,{Color color = blackBackground}){
   return AppBar(
     title: Text(title , style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold)),
@@ -249,4 +274,57 @@ AppBarNoIcon(String title,{Color color = blackBackground}){
 ///Navigator
 goToPage(context, pageName) {
   return Navigator.push(context, MaterialPageRoute(builder: (context) => pageName));
+}
+
+Widget drawer(context){
+  return Container(
+    width: 400.w,
+    child: Drawer(
+      backgroundColor: blackBackground,
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            SizedBox(height: 50.h,),
+            Container(alignment: Alignment.topLeft , margin: EdgeInsets.only(left: 10.w),
+                child: IconButton(color: white, icon: Icon(closeIcon), onPressed: () { Navigator.pop(context); },)),
+            SizedBox(height: 30.h,),
+            Image.asset('assets/image/drawerimg.png',height: 90.h, width: 100.w,),
+            SizedBox(height: 30.h,),
+            InkWell(child: text(context, 'الرئيسية', 21, white,family: 'DIN Next LT Arabic'), onTap: (){goToPage(context, MainScreen());},),
+            SizedBox(height: 10.h,),
+            InkWell(child: text(context, 'من نحن', 21, white,family: 'DIN Next LT Arabic'), onTap: (){goToPage(context, AboutUsMain());},),
+            SizedBox(height: 10.h,),
+            InkWell(child: text(context, 'خدماتنا', 21, white,family: 'DIN Next LT Arabic'), onTap: (){goToPage(context, Services());},),
+            SizedBox(height: 10.h,),
+            InkWell(child: text(context, 'اعمالنا', 21, white,family: 'DIN Next LT Arabic'), onTap: (){goToPage(context, OurWork());},),
+            SizedBox(height: 10.h,),
+            InkWell(child: text(context, 'المدونة', 21, white,family: 'DIN Next LT Arabic'), onTap: (){goToPage(context, blogs());},),
+            SizedBox(height: 10.h,),
+            InkWell(child: text(context, 'الباقات', 21, white,family: 'DIN Next LT Arabic'), onTap: (){goToPage(context, PackagesMain());},),
+            SizedBox(height: 10.h,),
+            InkWell(child: text(context, 'شركاءنا', 21, white,family: 'DIN Next LT Arabic'), onTap: (){goToPage(context, MainScreen());},),
+            SizedBox(height: 10.h,),
+            InkWell(child: text(context, 'تواصل معنا', 21, white,family: 'DIN Next LT Arabic'), onTap: (){goToPage(context, ContactWithUsMain());},),
+            SizedBox(height: 10.h,),
+            Container(child: Image.asset('assets/image/drawerSocialIcons.png',height: 100.h, width: 200.w,)),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(phoneNumberIcon,color: yellow,),
+                SizedBox(width: 10.w),
+                text(context, '013030103', 16, yellow)],),
+            SizedBox(height: 5.h,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(emailIcon,color: yellow,),
+                SizedBox(width: 10.w),
+                text(context, 'oamr @gm', 16, yellow)],),
+          ],
+        ),
+      ),
+    ),
+  );
 }

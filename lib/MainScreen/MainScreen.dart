@@ -29,6 +29,7 @@ class _MainScreenState extends State<MainScreen> {
       textDirection: TextDirection.rtl,
       child: Scaffold(
         appBar: AppBarNoIcon('الرئيسية'),
+        drawer: drawer(context),
         floatingActionButton: SpeedDial(
           backgroundColor: yellow,
           overlayColor: Colors.transparent,
