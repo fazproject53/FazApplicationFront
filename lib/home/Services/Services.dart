@@ -2,6 +2,7 @@
 
 import 'package:faz_application/Models/Methods.dart';
 import 'package:faz_application/order/orderService.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -40,7 +41,7 @@ class _ServicesState extends State<Services> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: blackBackground,
-        appBar: drowAppBar("خدماتنا",context),
+        appBar: drowAppBar("خدماتنا", context),
         drawer: drawer(context),
         body: Align(
           alignment: Alignment.topRight,
@@ -88,48 +89,96 @@ class _ServicesState extends State<Services> {
   }
 
   Widget serviceShap(int index) {
-    return SizedBox(
-      width: 321.w,
-      height: 146.h,
-      child: Card(
-        color: cardColor,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10.0.r),
-        ),
-        child: Column(children: [
-          Expanded(
+    return Directionality(
+      textDirection: TextDirection.rtl,
+      child: SizedBox(
+        width: 321.w,
+        height: 146.h,
+        child: Card(
+          color: cardColor,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10.0.r),
+          ),
+          child: Column(children: [
+            Expanded(
               flex: 2,
-              child: ListTile(
-                title: Padding(
-                  padding:  EdgeInsets.symmetric(vertical: 8.0.h),
-                  child: text(context, title[index], 14, white,
-                      fontWeight: FontWeight.bold),
-                ),
-                subtitle: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    text(context, subtitle[index], 12, white),
-                    Padding(
-                      padding: EdgeInsets.symmetric(vertical: 10.0.h),
-                      child: gradientContainer(89, 30,
-                          text(context, "أطلب الخدمة", 12, white), () {
-                        goToPage(context, orderService());
-                          }),
-                    )
-                  ],
-                ),
-                trailing: SizedBox(
-                    width: 64.w,
-                    height: 64.h,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(3.0.r),
-                      child: Image(
-                        image: AssetImage(imageName[index],),
-                        fit: BoxFit.cover,
-                      ),
-                    )),
-              )),
-        ]),
+
+              child: Row(
+                children: [
+                  Expanded(
+                    flex: 1,
+                    child: Container(
+                        margin: EdgeInsets.all(10.r),
+                        height: double.infinity,
+                        width: double.infinity,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(7.0.r),
+                          child: Image(
+                            image: AssetImage(
+                              imageName[index],
+                            ),
+                            fit: BoxFit.cover,
+                          ),
+                        )),
+                  ),
+                  Expanded(
+                      flex: 2,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.symmetric(vertical: 8.0.h),
+                            child: text(context, title[index], 15, white,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          text(context, subtitle[index], 14, white),
+                          Align(
+                            alignment: Alignment.bottomLeft,
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(vertical: 2.0.h,horizontal: 10.w),
+                              child: gradientContainer(
+                                  89, 30, text(context, "أطلب الخدمة", 12, white),
+                                  () {
+                                goToPage(context, orderService());
+                              }),
+                            ),
+                          )
+                        ],
+                      )),
+                ],
+              ),
+              // ListTile(
+              //   title: Padding(
+              //     padding:  EdgeInsets.symmetric(vertical: 8.0.h),
+              //     child: text(context, title[index], 14, white,
+              //         fontWeight: FontWeight.bold),
+              //   ),
+              //   subtitle: Column(
+              //     crossAxisAlignment: CrossAxisAlignment.start,
+              //     children: [
+              //       text(context, subtitle[index], 12, white),
+              //       Padding(
+              //         padding: EdgeInsets.symmetric(vertical: 10.0.h),
+              //         child: gradientContainer(89, 30,
+              //             text(context, "أطلب الخدمة", 12, white), () {
+              //           goToPage(context, orderService());
+              //             }),
+              //       )
+              //     ],
+              //   ),
+              //   trailing: SizedBox(
+              //       width: 100.w,
+              //       child: ClipRRect(
+              //         borderRadius: BorderRadius.circular(3.0.r),
+              //         child: Image(
+              //           image: AssetImage(imageName[index],),
+              //           fit: BoxFit.cover,
+              //         ),
+              //       )),
+              // )
+            ),
+          ]),
+        ),
       ),
     );
   }

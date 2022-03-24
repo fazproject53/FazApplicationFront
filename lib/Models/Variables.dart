@@ -35,6 +35,11 @@ IconData backIcon = Icons.arrow_forward_ios_rounded;
 IconData doneIcon = Icons.done;
 IconData send = Icons.send_rounded;
 
+IconData home = Icons.home;
+IconData who = Icons.question_mark_outlined;
+IconData work = Icons.work;
+IconData blog = Icons.book;
+IconData partners = Icons.group;
 
 ///Text Controller
 ///Contact with us

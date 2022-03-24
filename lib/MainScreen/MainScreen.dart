@@ -70,33 +70,18 @@ class _MainScreenState extends State<MainScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-          Container(
-          height: 180.h,
-          width: 400.w,
-          child: Carousel(
-              indicatorBarColor: Colors.black.withOpacity(0.2),
-              autoScrollDuration: Duration(seconds: 1),
-              animationPageDuration: Duration(milliseconds: 400),
-              activateIndicatorColor: yellow,
-              animationPageCurve: Curves.bounceInOut,
-              indicatorBarHeight: 30,
-              indicatorHeight: 10,
-              indicatorWidth: 10,
-              unActivatedIndicatorColor: Colors.grey,
-              autoScroll: true,
-              // widgets
-              items: [
-            Container(
-            child: Lottie.asset('assets/lottie/backgroundoption4.json'),
-        ),
-            Container(
-              child: Lottie.asset('assets/lottie/backgroundoption2.json'),
-            ),
-            Container(
-              child: Lottie.asset('assets/lottie/backgroundoption1.json'),
-            )
-            ]
-        ),),
+          Stack(
+            alignment:  Alignment.center,
+            children: [
+              Container(
+                  height: 180.h,
+                  width: MediaQuery.of(context).size.width,
+                  color: yellow,
+                  child: Image.asset('assets/image/img.png',height: double.infinity, fit: BoxFit.fill, width: MediaQuery.of(context).size.width,)
+              ),
+              text(context, 'فاز لتقنية المعلومات', 22, white)
+            ],
+          ),
 
           SizedBox(height: 10.h,),
           Row(
