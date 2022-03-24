@@ -1,3 +1,4 @@
+import 'package:arabic_numbers/arabic_numbers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -20,12 +21,14 @@ class _chatRoomState extends State<chatRoom> {
 
   TextEditingController m = new TextEditingController();
 
+  String t = ArabicNumbers().convert(10);
+  String th = ArabicNumbers().convert(30);
   @override
   Widget build(BuildContext context) {
     listwidget = [
       container('لو سمحت فية مشكلة'),
       container('مرحبا'),
-      text(context, 'Monday, 10:40 am', 14, white,align: TextAlign.center),
+      text(context, ' صباحا  '+ t + ' : ' + th +'  الاثنين', 14, white,align: TextAlign.center),
       containerUser('  اتفضل مع حضرتك يافندم في اي استفسار بخصوص الخدمة؟'),
       containerUser('مرحبا'),
     ];
