@@ -28,7 +28,7 @@ class _chatRoomState extends State<chatRoom> {
     listwidget = [
       container('لو سمحت فية مشكلة'),
       container('مرحبا'),
-      text(context, ' صباحا  '+ t + ' : ' + th +'  الاثنين', 14, white,align: TextAlign.center),
+      text(context, ' الاثنين  '+ t + ' : ' + th +'  صباحا', 14, white,align: TextAlign.center),
       containerUser('  اتفضل مع حضرتك يافندم في اي استفسار بخصوص الخدمة؟'),
       containerUser('مرحبا'),
     ];
