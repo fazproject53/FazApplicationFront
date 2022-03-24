@@ -1,17 +1,15 @@
 import 'package:arabic_numbers/arabic_numbers.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../Models/Methods.dart';
 import '../Models/Variables.dart';
 
-class chatRoom extends StatefulWidget{
+class chatRoom extends StatefulWidget {
   _chatRoomState createState() => _chatRoomState();
 }
 
 class _chatRoomState extends State<chatRoom> {
-
   List<Widget>? listwidget;
   String help = "";
   static bool isWritting = false;
@@ -28,7 +26,8 @@ class _chatRoomState extends State<chatRoom> {
     listwidget = [
       container('لو سمحت فية مشكلة'),
       container('مرحبا'),
-      text(context, ' الاثنين  '+ t + ' : ' + th +'  صباحا', 14, white,align: TextAlign.center),
+      text(context, ' الاثنين  ' + t + ' : ' + th + '  صباحا', 14, white,
+          align: TextAlign.center),
       containerUser('  اتفضل مع حضرتك يافندم في اي استفسار بخصوص الخدمة؟'),
       containerUser('مرحبا'),
     ];
@@ -43,7 +42,7 @@ class _chatRoomState extends State<chatRoom> {
           });
         },
         child: Scaffold(
-          appBar: appBar('المحادثة المباشرة',context),
+          appBar: appBar('المحادثة المباشرة', context),
           backgroundColor: blackBackground,
           body: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -58,56 +57,55 @@ class _chatRoomState extends State<chatRoom> {
                     ),
                   ),
                 ),
-
-
                 Padding(
-                  padding: MediaQuery
-                      .of(context)
-                      .viewInsets
-                      .bottom != 0 ? EdgeInsets.only(bottom: 0.h) : EdgeInsets
-                      .only(bottom: 0.h),
+                  padding: MediaQuery.of(context).viewInsets.bottom != 0
+                      ? EdgeInsets.only(bottom: 0.h)
+                      : EdgeInsets.only(bottom: 0.h),
                   child: Row(
                     children: [
                       Row(
                         children: [
                           Container(
-                            margin: isWritting ? EdgeInsets.only(
-                                right: 15.w) : EdgeInsets.only(
-                                right: 15.w),
-                            child: InkWell(onTap: () {
-                              FocusManager.instance.primaryFocus
-                                  ?.unfocus();
-                              setState(() {
-                                isWritting = false;
-                                m.clear();
-                              });
-                            },
+                            margin: isWritting
+                                ? EdgeInsets.only(right: 15.w)
+                                : EdgeInsets.only(right: 15.w),
+                            child: InkWell(
+                              onTap: () {
+                                FocusManager.instance.primaryFocus?.unfocus();
+                                setState(() {
+                                  isWritting = false;
+                                  m.clear();
+                                });
+                              },
                               child: Directionality(
-                                  textDirection: TextDirection.ltr,child: Icon(send, size: 30,color: yellow, )),),
+                                  textDirection: TextDirection.ltr,
+                                  child: Icon(
+                                    send,
+                                    size: 30,
+                                    color: yellow,
+                                  )),
+                            ),
                           )
                         ],
                       ),
                       Container(
                         height: 50.h,
-                        margin:EdgeInsets.all(15),
-                        decoration:   BoxDecoration(
-                          color: cardColor,
-                            border: Border.all(width: 0.w)),
+                        margin: EdgeInsets.all(15),
+                        decoration: BoxDecoration(
+                            color: cardColor, border: Border.all(width: 0.w)),
                         child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Container(
                                 height: 35.h,
                                 width: 270.w,
-                                margin: EdgeInsets.only(top: 10.h,
-                                    bottom: 10.h,
-                                    left: 20.w),
+                                margin: EdgeInsets.only(
+                                    top: 10.h, bottom: 10.h, left: 20.w),
                                 decoration: BoxDecoration(
                                     color: cardColor,
                                     borderRadius: BorderRadius.circular(50),
                                     border: const Border(
-                                        top: BorderSide(color: cardColor)
-                                        ,
+                                        top: BorderSide(color: cardColor),
                                         bottom: BorderSide(color: cardColor),
                                         left: BorderSide(color: cardColor),
                                         right: BorderSide(color: cardColor))),
@@ -119,39 +117,36 @@ class _chatRoomState extends State<chatRoom> {
                                   onTap: () {
                                     setState(() {
                                       m.addListener(() {
-                                        MediaQuery
-                                            .of(context)
-                                            .viewInsets
-                                            .bottom != 0 && m.text.isNotEmpty ?
-                                        isWritting = true : isWritting = false;
+                                        MediaQuery.of(context)
+                                                        .viewInsets
+                                                        .bottom !=
+                                                    0 &&
+                                                m.text.isNotEmpty
+                                            ? isWritting = true
+                                            : isWritting = false;
                                       });
                                     });
                                   },
-
                                   onChanged: (value) {
                                     setState(() {
                                       value = m.text;
                                     });
                                   },
                                   decoration: InputDecoration(
-                                    border: const OutlineInputBorder(
-                                        borderSide: BorderSide.none),
-                                    contentPadding: EdgeInsets.symmetric(
-                                        vertical: 10.h, horizontal: 20.w),
-                                    hintText: 'اكتب هنا .....',
-                                    hintStyle: TextStyle(color: white.withOpacity(0.5))
-
-                                  ),),
+                                      border: const OutlineInputBorder(
+                                          borderSide: BorderSide.none),
+                                      contentPadding: EdgeInsets.symmetric(
+                                          vertical: 10.h, horizontal: 20.w),
+                                      hintText: 'اكتب هنا .....',
+                                      hintStyle: TextStyle(
+                                          color: white.withOpacity(0.5))),
+                                ),
                               ),
-
-
-
                             ]),
                       ),
                     ],
                   ),
                 ),
-
               ]),
         ),
       ),
@@ -161,21 +156,33 @@ class _chatRoomState extends State<chatRoom> {
   Widget container(String text) {
     return Row(
       children: [
-        SizedBox(width: 10.w,),
-        CircleAvatar(backgroundImage: Image.asset('assets/image/userImage.png').image,),
-        SizedBox(width: 5.w,),
+        SizedBox(
+          width: 10.w,
+        ),
+        CircleAvatar(
+          backgroundImage: Image.asset('assets/image/userImage.png').image,
+        ),
+        SizedBox(
+          width: 5.w,
+        ),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              width: text.length > 10? 200.w: 70.w,
-              margin: const EdgeInsets.only(top: 10, bottom: 10, left: 3, right: 5),
-              decoration: const BoxDecoration(color: grey,
-                  borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10),
+              width: text.length > 10 ? 200.w : 70.w,
+              margin:
+                  const EdgeInsets.only(top: 10, bottom: 10, left: 3, right: 5),
+              decoration: const BoxDecoration(
+                  color: grey,
+                  borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(10),
                       topLeft: Radius.circular(10))),
               child: Padding(
                 padding: const EdgeInsets.all(10.0),
-                child: Text(text, style: TextStyle(color: white),),
+                child: Text(
+                  text,
+                  style: TextStyle(color: white),
+                ),
               ),
             ),
           ],
@@ -192,22 +199,34 @@ class _chatRoomState extends State<chatRoom> {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             Container(
-              width: text.length > 10? 200.w: 70.w,
-              margin: const EdgeInsets.only(top: 10, bottom: 10, left: 5, right: 2),
-              decoration:  const BoxDecoration(color: grey,
-                  borderRadius: BorderRadius.only(bottomRight: Radius.circular(10),
-                      topRight: Radius.circular(10))
-              ),
+              width: text.length > 10 ? 200.w : 70.w,
+              margin:
+                  const EdgeInsets.only(top: 10, bottom: 10, left: 5, right: 2),
+              decoration: const BoxDecoration(
+                  color: grey,
+                  borderRadius: BorderRadius.only(
+                      bottomRight: Radius.circular(10),
+                      topRight: Radius.circular(10))),
               child: Padding(
                 padding: const EdgeInsets.all(10.0),
-                child: Text(text, style: TextStyle(color: white),textAlign: TextAlign.start,),
+                child: Text(
+                  text,
+                  style: TextStyle(color: white),
+                  textAlign: TextAlign.start,
+                ),
               ),
             ),
           ],
         ),
-        SizedBox(width: 5.w,),
-        CircleAvatar(backgroundImage: Image.asset('assets/image/img_1.png').image,),
-        SizedBox(width: 10.w,),
+        SizedBox(
+          width: 5.w,
+        ),
+        CircleAvatar(
+          backgroundImage: Image.asset('assets/image/img_1.png').image,
+        ),
+        SizedBox(
+          width: 10.w,
+        ),
       ],
     );
   }
@@ -219,5 +238,4 @@ class _chatRoomState extends State<chatRoom> {
       currentFocus.unfocus();
     }
   }
-
 }

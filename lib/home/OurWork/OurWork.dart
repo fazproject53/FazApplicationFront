@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -66,24 +65,20 @@ class _OurWorkState extends State<OurWork> {
                 Expanded(
                   child: Directionality(
                       textDirection: TextDirection.rtl,
-                      child: Wrap(
-                          runSpacing: 13.0.h,
-                          spacing: 12.0.w,
-                          children: [
-                          all(),
-                           webDesign(),
-                           identityDesign(),
-                           mobileDevelopment(),
-                           socialMedia(),
-                           searchEngines()
-                          ])),
+                      child:
+                          Wrap(runSpacing: 13.0.h, spacing: 12.0.w, children: [
+                        all(),
+                        webDesign(),
+                        identityDesign(),
+                        mobileDevelopment(),
+                        socialMedia(),
+                        searchEngines()
+                      ])),
                 ),
-
                 SizedBox(
                   height: 10.h,
                 ),
                 gridView(),
-                //
               ],
             ),
           )),
@@ -92,20 +87,21 @@ class _OurWorkState extends State<OurWork> {
 //------------------------------------------------------------------------
 
   Widget knowUs() {
-    return Align(alignment: Alignment.topRight,child: text(context, "أفكارنا الذكية ومشاريعنا الخلاقة", 16, white));
+    return Align(
+        alignment: Alignment.topRight,
+        child: text(context, "أفكارنا الذكية ومشاريعنا الخلاقة", 16, white));
   }
 //------------------------------------------------------------------------
 
   Widget description() {
     return Align(
-        alignment: Alignment.topRight,
+      alignment: Alignment.topRight,
       child: text(
           context,
           "عملائنا ثقتهم بنا سر نجاحنا ونحن في شركة فاز نحرص دائما على تقديم افضل خدمة لـ زبائننا",
           14,
           white,
-   align: TextAlign.justify
-      ),
+          align: TextAlign.justify),
     );
   }
 //------------------------------------------------------------------------
@@ -145,6 +141,7 @@ class _OurWorkState extends State<OurWork> {
           ),
         ));
   }
+
 //------------------------------------------------------------------------
   Widget all() {
     return container(
@@ -258,6 +255,4 @@ class _OurWorkState extends State<OurWork> {
         height: 40.h,
         backgroundColor: searchBottom ? yellow : transparent);
   }
-
-
 }

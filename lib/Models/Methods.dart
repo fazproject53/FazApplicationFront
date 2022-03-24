@@ -100,7 +100,7 @@ Widget textFieldDesc(
         isDense: false,
         filled: true,
         prefixIcon: Padding(
-          padding:  EdgeInsets.only(bottom: 130.h),
+          padding: EdgeInsets.only(bottom: 130.h),
           child: Icon(
             prefixIcon,
             color: yellow.withOpacity(0.7),
@@ -145,7 +145,7 @@ Widget button(Widget child, onTap,
 }
 
 ///Button with border
-Widget gradientContainer(double width, double height, Widget child, onTap,
+Widget buttonsWithBorder(double width, double height, Widget child, onTap,
     {Color color = yellow, double radius = 8.0}) {
   return InkWell(
     child: Container(
@@ -160,18 +160,22 @@ Widget gradientContainer(double width, double height, Widget child, onTap,
     onTap: onTap,
   );
 }
+
 ///-----------------------------------------------------------------------------
-Widget container( Widget child, onTap,
-    { BoxConstraints? constraints,double? height,double? width,Color color = yellow, double radius = 8.0,Color backgroundColor=Colors.transparent}) {
+Widget container(Widget child, onTap,
+    {BoxConstraints? constraints,
+    double? height,
+    double? width,
+    Color color = yellow,
+    double radius = 8.0,
+    Color backgroundColor = Colors.transparent}) {
   return InkWell(
     child: Container(
-
-      constraints:constraints,
+      constraints: constraints,
       width: width?.w,
       height: height,
       child: Center(child: child),
       decoration: BoxDecoration(
-
         color: backgroundColor,
         border: Border.all(color: color, width: 1.5.r),
         borderRadius: BorderRadius.circular(radius.r),
@@ -180,6 +184,7 @@ Widget container( Widget child, onTap,
     onTap: onTap,
   );
 }
+
 ///---------------------------------Padding Section-----------------------------
 ///Padding with top
 Widget paddingWithTop(double pL, double pR, double pT, Widget child,
@@ -210,7 +215,7 @@ PreferredSizeWidget? drowAppBar(String title, context) {
         style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold)),
     actions: [
       IconButton(
-          onPressed: (){
+          onPressed: () {
             Navigator.pop(context);
           },
           icon: Icon(
@@ -221,9 +226,11 @@ PreferredSizeWidget? drowAppBar(String title, context) {
   );
 }
 
-appBarMain(String title, BuildContext context ,{Color color = blackBackground}){
+appBarMain(String title, BuildContext context,
+    {Color color = blackBackground}) {
   return AppBar(
-    title: Text(title , style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold)),
+    title: Text(title,
+        style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold)),
     centerTitle: true,
     leading: IconButton(
       padding: EdgeInsets.only(right: 20.w),
@@ -238,10 +245,10 @@ appBarMain(String title, BuildContext context ,{Color color = blackBackground}){
   );
 }
 
-
-appBar(String title, BuildContext context ,{Color color = blackBackground}){
+appBar(String title, BuildContext context, {Color color = blackBackground}) {
   return AppBar(
-    title: Text(title , style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold)),
+    title: Text(title,
+        style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold)),
     centerTitle: true,
     leading: IconButton(
       padding: EdgeInsets.only(right: 20.w),
@@ -257,28 +264,27 @@ appBar(String title, BuildContext context ,{Color color = blackBackground}){
 }
 
 ///app bar without back icon
-AppBarNoIcon(String title,{Color color = blackBackground}){
+AppBarNoIcon(String title, {Color color = blackBackground}) {
   return AppBar(
-    title: Text(title,style:TextStyle(
-        fontSize:22.sp,
-        fontFamily: 'Cairo',
-        color: white
-    ),
+    title: Text(
+      title,
+      style: TextStyle(fontSize: 22.sp, fontFamily: 'Cairo', color: white),
     ),
     centerTitle: true,
     backgroundColor: color,
     elevation: 0,
   );
 }
-///-----------------------------------------------------------------------------
 
+///-----------------------------------------------------------------------------
 
 ///Navigator
 goToPage(context, pageName) {
-  return Navigator.push(context, MaterialPageRoute(builder: (context) => pageName));
+  return Navigator.push(
+      context, MaterialPageRoute(builder: (context) => pageName));
 }
 
-Widget drawer(context){
+Widget drawer(context) {
   return Container(
     width: 400.w,
     child: Drawer(
@@ -288,111 +294,294 @@ Widget drawer(context){
           mainAxisSize: MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            SizedBox(height: 30.h,),
-            Container(alignment: Alignment.topLeft , margin: EdgeInsets.only(left: 10.w),
-                child: IconButton(color: white, icon: Icon(closeIcon), onPressed: () { Navigator.pop(context); },)),
-            SizedBox(height: 10.h,),
-             Padding(
-               padding: EdgeInsets.only(right: 15.w),
-               child: Image.asset('assets/image/drawerimg.png',height: 90.h, width: 100.w,),
-             ),
-             SizedBox(height: 40.h,),
+            SizedBox(
+              height: 30.h,
+            ),
+            Container(
+                alignment: Alignment.topLeft,
+                margin: EdgeInsets.only(left: 10.w),
+                child: IconButton(
+                  color: white,
+                  icon: Icon(closeIcon),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                )),
+            SizedBox(
+              height: 10.h,
+            ),
+            Padding(
+              padding: EdgeInsets.only(right: 15.w),
+              child: Image.asset(
+                'assets/image/drawerimg.png',
+                height: 90.h,
+                width: 100.w,
+              ),
+            ),
+            SizedBox(
+              height: 40.h,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    SizedBox(width: 10.w,),
-                    Icon(home,color: yellow,),
-                    SizedBox(width: 10.w,),
-                    InkWell(child: text(context, 'الرئيسية', 20, white,), onTap: (){goToPage(context, MainScreen());},),
-
-                  ],
+              children: [
+                SizedBox(
+                  width: 10.w,
                 ),
-            Divider(color: white.withOpacity(0.30),),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    SizedBox(width: 10.w,),
-                    Icon(who,color: yellow,),
-                    SizedBox(width: 10.w,),
-                    InkWell(child: text(context, 'من نحن', 20, white,), onTap: (){goToPage(context, AboutUsMain());},),
-                  ],
+                Icon(
+                  home,
+                  color: yellow,
                 ),
-            Divider(color: white.withOpacity(0.30),),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                SizedBox(width: 10.w,),
-                Icon(askServiceIcon,color: yellow,),
-                SizedBox(width: 10.w,),
-                InkWell(child: text(context, 'خدماتنا', 20, white,), onTap: (){goToPage(context, Services());},),
+                SizedBox(
+                  width: 10.w,
+                ),
+                InkWell(
+                  child: text(
+                    context,
+                    'الرئيسية',
+                    20,
+                    white,
+                  ),
+                  onTap: () {
+                    goToPage(context, MainScreen());
+                  },
+                ),
               ],
             ),
-            Divider(color: white.withOpacity(0.30),),
+            Divider(
+              color: white.withOpacity(0.30),
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                SizedBox(width: 10.w,),
-                Icon(work,color: yellow,),
-                SizedBox(width: 10.w,),
-                InkWell(child: text(context, 'اعمالنا', 20, white,), onTap: (){goToPage(context, OurWork());},),
+                SizedBox(
+                  width: 10.w,
+                ),
+                Icon(
+                  who,
+                  color: yellow,
+                ),
+                SizedBox(
+                  width: 10.w,
+                ),
+                InkWell(
+                  child: text(
+                    context,
+                    'من نحن',
+                    20,
+                    white,
+                  ),
+                  onTap: () {
+                    goToPage(context, AboutUsMain());
+                  },
+                ),
               ],
             ),
-            Divider(color: white.withOpacity(0.30),),
+            Divider(
+              color: white.withOpacity(0.30),
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                SizedBox(width: 10.w,),
-                Icon(blog,color: yellow,),
-                SizedBox(width: 10.w,),
-                InkWell(child: text(context, 'المدونة', 20, white,), onTap: (){goToPage(context, blogs());},),
+                SizedBox(
+                  width: 10.w,
+                ),
+                Icon(
+                  askServiceIcon,
+                  color: yellow,
+                ),
+                SizedBox(
+                  width: 10.w,
+                ),
+                InkWell(
+                  child: text(
+                    context,
+                    'خدماتنا',
+                    20,
+                    white,
+                  ),
+                  onTap: () {
+                    goToPage(context, Services());
+                  },
+                ),
               ],
             ),
-            Divider(color: white.withOpacity(0.30),),
+            Divider(
+              color: white.withOpacity(0.30),
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                SizedBox(width: 10.w,),
-                Icon(askPackageIcon,color: yellow,),
-                SizedBox(width: 10.w,),
-                InkWell(child: text(context, 'الباقات', 20, white,), onTap: (){goToPage(context, PackagesMain());},),
+                SizedBox(
+                  width: 10.w,
+                ),
+                Icon(
+                  work,
+                  color: yellow,
+                ),
+                SizedBox(
+                  width: 10.w,
+                ),
+                InkWell(
+                  child: text(
+                    context,
+                    'اعمالنا',
+                    20,
+                    white,
+                  ),
+                  onTap: () {
+                    goToPage(context, OurWork());
+                  },
+                ),
               ],
             ),
-            Divider(color: white.withOpacity(0.30),),
+            Divider(
+              color: white.withOpacity(0.30),
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                SizedBox(width: 10.w,),
-                Icon(partners,color: yellow,),
-                SizedBox(width: 10.w,),
-                InkWell(child: text(context, 'شركاءنا', 20, white,), onTap: (){goToPage(context, OurPartnerMain());},),
+                SizedBox(
+                  width: 10.w,
+                ),
+                Icon(
+                  blog,
+                  color: yellow,
+                ),
+                SizedBox(
+                  width: 10.w,
+                ),
+                InkWell(
+                  child: text(
+                    context,
+                    'المدونة',
+                    20,
+                    white,
+                  ),
+                  onTap: () {
+                    goToPage(context, blogs());
+                  },
+                ),
               ],
             ),
-            Divider(color: white.withOpacity(0.30),),
+            Divider(
+              color: white.withOpacity(0.30),
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                SizedBox(width: 10.w,),
-                Icon(emailIcon,color: yellow,),
-                SizedBox(width: 10.w,),
-                InkWell(child: text(context, 'تواصل معنا', 20, white,), onTap: (){goToPage(context, ContactWithUsMain());},),
+                SizedBox(
+                  width: 10.w,
+                ),
+                Icon(
+                  askPackageIcon,
+                  color: yellow,
+                ),
+                SizedBox(
+                  width: 10.w,
+                ),
+                InkWell(
+                  child: text(
+                    context,
+                    'الباقات',
+                    20,
+                    white,
+                  ),
+                  onTap: () {
+                    goToPage(context, PackagesMain());
+                  },
+                ),
+              ],
+            ),
+            Divider(
+              color: white.withOpacity(0.30),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                SizedBox(
+                  width: 10.w,
+                ),
+                Icon(
+                  partners,
+                  color: yellow,
+                ),
+                SizedBox(
+                  width: 10.w,
+                ),
+                InkWell(
+                  child: text(
+                    context,
+                    'شركاءنا',
+                    20,
+                    white,
+                  ),
+                  onTap: () {
+                    goToPage(context, OurPartnerMain());
+                  },
+                ),
+              ],
+            ),
+            Divider(
+              color: white.withOpacity(0.30),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                SizedBox(
+                  width: 10.w,
+                ),
+                Icon(
+                  emailIcon,
+                  color: yellow,
+                ),
+                SizedBox(
+                  width: 10.w,
+                ),
+                InkWell(
+                  child: text(
+                    context,
+                    'تواصل معنا',
+                    20,
+                    white,
+                  ),
+                  onTap: () {
+                    goToPage(context, ContactWithUsMain());
+                  },
+                ),
               ],
             ),
             Container(
-              alignment: Alignment.center,
-                child: Image.asset('assets/image/drawerSocialIcons.png',height: 100.h, width: 200.w,)),
+                alignment: Alignment.center,
+                child: Image.asset(
+                  'assets/image/drawerSocialIcons.png',
+                  height: 100.h,
+                  width: 200.w,
+                )),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(phoneNumberIcon,color: yellow,),
+                Icon(
+                  phoneNumberIcon,
+                  color: yellow,
+                ),
                 SizedBox(width: 10.w),
-                text(context, '013030103', 16, yellow)],),
-            SizedBox(height: 5.h,),
+                text(context, '013030103', 16, yellow)
+              ],
+            ),
+            SizedBox(
+              height: 5.h,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(emailIcon,color: yellow,),
+                Icon(
+                  emailIcon,
+                  color: yellow,
+                ),
                 SizedBox(width: 10.w),
-                text(context, 'oamr @gm', 16, yellow)],),
+                text(context, 'oamr @gm', 16, yellow)
+              ],
+            ),
           ],
         ),
       ),
