@@ -37,65 +37,70 @@ class _IntroductionState extends State<Introduction> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: blackBackground,
-        body: SizedBox(
-          height: double.infinity,
-          width: double.infinity,
-          child: Column(
-            children: [
-              SizedBox(
-                height: 50.h,
-              ),
-              Expanded(
-                  flex: 1,
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 18.0.w),
-                    child: Directionality(
-                      textDirection: TextDirection.rtl,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Expanded(
-                              child: InkWell(
-                            onTap: () {
-                              goToPage(context, MainScreen());
-                            },
-                            child: text(context, "تخطي", 14, yellow,
-                                fontWeight: FontWeight.bold),
-                          )),
-                          Spacer(),
-                          Spacer(),
-                          Expanded(
-                              child: SmoothPageIndicator(
-                            controller: pageController,
-                            count: 3,
-                           onDotClicked:( index){
-                              pageController.jumpToPage(index);
-                           } ,
-                            effect: JumpingDotEffect(
-                                spacing: 15.0,
-                                radius: 20.0.r,
-                                dotWidth: 10.0,
-                                dotHeight: 10.0,
-                                dotColor: Colors.grey,
-                                verticalOffset: 15,
-                                activeDotColor: yellow),
-                          )),
-                        ],
+      backgroundColor: blackBackground,
+      body: SizedBox(
+        height: double.infinity,
+        width: double.infinity,
+        child: Column(
+          children: [
+            SizedBox(
+              height: 50.h,
+            ),
+            Expanded(
+              flex: 1,
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 18.0.w),
+                child: Directionality(
+                  textDirection: TextDirection.rtl,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Expanded(
+                        child: InkWell(
+                          onTap: () {
+                            goToPage(context, MainScreen());
+                          },
+                          child: text(context, "تخطي", 14, yellow,
+                              fontWeight: FontWeight.bold),
+                        ),
                       ),
-                    ),
-                  )),
-              SizedBox(
-                height: 50.h,
+                      Spacer(),
+                      Spacer(),
+                      Expanded(
+                        child: SmoothPageIndicator(
+                          controller: pageController,
+                          count: 3,
+                          onDotClicked: (index) {
+                            pageController.jumpToPage(index);
+                          },
+                          effect: JumpingDotEffect(
+                              spacing: 15.0,
+                              radius: 20.0.r,
+                              dotWidth: 10.0,
+                              dotHeight: 10.0,
+                              dotColor: Colors.grey,
+                              verticalOffset: 15,
+                              activeDotColor: yellow),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ),
-              Expanded(
-                  flex: 9,
-                  child: PageView(
-                    controller: pageController,
-                    children: pag,
-                  ))
-            ],
-          ),
-        ));
+            ),
+            SizedBox(
+              height: 50.h,
+            ),
+            Expanded(
+              flex: 9,
+              child: PageView(
+                controller: pageController,
+                children: pag,
+              ),
+            )
+          ],
+        ),
+      ),
+    );
   }
 }

@@ -1,8 +1,6 @@
-// ignore_for_file: file_names
 
 import 'package:faz_application/Models/Methods.dart';
 import 'package:faz_application/order/orderService.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -59,8 +57,6 @@ class _ServicesState extends State<Services> {
                   height: 25.h,
                 ),
                 Expanded(child: services()),
-
-                //
               ],
             ),
           ),
@@ -99,85 +95,58 @@ class _ServicesState extends State<Services> {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10.0.r),
           ),
-          child: Column(children: [
-            Expanded(
-              flex: 2,
-
-              child: Row(
-                children: [
-                  Expanded(
-                    flex: 1,
-                    child: Container(
-                        margin: EdgeInsets.all(10.r),
-                        height: double.infinity,
-                        width: double.infinity,
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(7.0.r),
-                          child: Image(
-                            image: AssetImage(
-                              imageName[index],
+          child: Column(
+            children: [
+              Expanded(
+                flex: 2,
+                child: Row(
+                  children: [
+                    Expanded(
+                      flex: 1,
+                      child: Container(
+                          margin: EdgeInsets.all(10.r),
+                          height: double.infinity,
+                          width: double.infinity,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(7.0.r),
+                            child: Image(
+                              image: AssetImage(
+                                imageName[index],
+                              ),
+                              fit: BoxFit.cover,
                             ),
-                            fit: BoxFit.cover,
-                          ),
+                          )),
+                    ),
+                    Expanded(
+                        flex: 2,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.symmetric(vertical: 8.0.h),
+                              child: text(context, title[index], 15, white,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            text(context, subtitle[index], 14, white),
+                            Align(
+                              alignment: Alignment.bottomLeft,
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(
+                                    vertical: 2.0.h, horizontal: 10.w),
+                                child: buttonsWithBorder(89, 30,
+                                    text(context, "أطلب الخدمة", 12, white),
+                                    () {
+                                  goToPage(context, orderService());
+                                }),
+                              ),
+                            )
+                          ],
                         )),
-                  ),
-                  Expanded(
-                      flex: 2,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.symmetric(vertical: 8.0.h),
-                            child: text(context, title[index], 15, white,
-                                fontWeight: FontWeight.bold),
-                          ),
-                          text(context, subtitle[index], 14, white),
-                          Align(
-                            alignment: Alignment.bottomLeft,
-                            child: Padding(
-                              padding: EdgeInsets.symmetric(vertical: 2.0.h,horizontal: 10.w),
-                              child: gradientContainer(
-                                  89, 30, text(context, "أطلب الخدمة", 12, white),
-                                  () {
-                                goToPage(context, orderService());
-                              }),
-                            ),
-                          )
-                        ],
-                      )),
-                ],
+                  ],
+                ),
               ),
-              // ListTile(
-              //   title: Padding(
-              //     padding:  EdgeInsets.symmetric(vertical: 8.0.h),
-              //     child: text(context, title[index], 14, white,
-              //         fontWeight: FontWeight.bold),
-              //   ),
-              //   subtitle: Column(
-              //     crossAxisAlignment: CrossAxisAlignment.start,
-              //     children: [
-              //       text(context, subtitle[index], 12, white),
-              //       Padding(
-              //         padding: EdgeInsets.symmetric(vertical: 10.0.h),
-              //         child: gradientContainer(89, 30,
-              //             text(context, "أطلب الخدمة", 12, white), () {
-              //           goToPage(context, orderService());
-              //             }),
-              //       )
-              //     ],
-              //   ),
-              //   trailing: SizedBox(
-              //       width: 100.w,
-              //       child: ClipRRect(
-              //         borderRadius: BorderRadius.circular(3.0.r),
-              //         child: Image(
-              //           image: AssetImage(imageName[index],),
-              //           fit: BoxFit.cover,
-              //         ),
-              //       )),
-              // )
-            ),
-          ]),
+            ],
+          ),
         ),
       ),
     );

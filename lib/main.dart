@@ -1,5 +1,4 @@
-import 'package:faz_application/MainScreen/MainScreen.dart';
-import 'package:faz_application/Models/Methods.dart';
+
 import 'package:faz_application/Models/Variables.dart';
 import 'package:faz_application/blog/blogs.dart';
 import 'package:faz_application/order/orderPackage.dart';
@@ -7,9 +6,8 @@ import 'package:faz_application/order/orderService.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'HomeScreen-Main/ContactWithUs/contact_with_us.dart';
 import 'home/IntroductionScreen/IntroductionScreen.dart';
-import 'home/Services/Services.dart';
+
 
 void main() {
   runApp(const MyApp());
